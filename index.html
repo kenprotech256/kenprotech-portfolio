@@ -1,14 +1,23 @@
+# KENPRO TECH — Premium Single File Website
+
+Save this as:
+
+```txt
+index.html
+```
+
+Then upload it to your hosting/Vercel/GitHub.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>KENPRO TECH</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,11 +25,11 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
+font-family:'Poppins',sans-serif;
 background:#050505;
 color:white;
 overflow-x:hidden;
@@ -31,8 +40,14 @@ width:8px;
 }
 
 ::-webkit-scrollbar-thumb{
-background:#2196f3;
+background:#22d3ee;
 border-radius:20px;
+}
+
+.container{
+width:90%;
+max-width:1300px;
+margin:auto;
 }
 
 header{
@@ -41,272 +56,297 @@ top:0;
 left:0;
 width:100%;
 z-index:1000;
-background:rgba(0,0,0,0.92);
-backdrop-filter:blur(10px);
-border-bottom:1px solid #141414;
+backdrop-filter:blur(12px);
+background:rgba(0,0,0,0.75);
+border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-.navbar{
-width:90%;
-margin:auto;
+nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 0;
+padding:22px 0;
 }
 
 .logo{
-font-size:32px;
-font-weight:900;
+font-size:30px;
+font-weight:800;
 letter-spacing:1px;
 }
 
 .logo span{
-color:#2196f3;
+color:#22d3ee;
 }
 
-nav a{
+.nav-links{
+display:flex;
+gap:28px;
+}
+
+.nav-links a{
 text-decoration:none;
 color:white;
-margin-left:25px;
 font-size:15px;
 transition:0.3s;
 }
 
-nav a:hover{
-color:#2196f3;
+.nav-links a:hover{
+color:#22d3ee;
 }
 
 .hero{
-min-height:120vh;
+min-height:100vh;
 display:flex;
 align-items:center;
-justify-content:center;
-padding:140px 10%;
-background:
-radial-gradient(circle at top left,#0d47a1 0%,transparent 30%),
-radial-gradient(circle at bottom right,#1565c0 0%,transparent 30%),
-#050505;
+position:relative;
+overflow:hidden;
+}
+
+.glow1,
+.glow2{
+position:absolute;
+border-radius:50%;
+filter:blur(100px);
+}
+
+.glow1{
+width:500px;
+height:500px;
+background:#06b6d4;
+top:-150px;
+left:-120px;
+opacity:0.25;
+}
+
+.glow2{
+width:500px;
+height:500px;
+background:#2563eb;
+bottom:-150px;
+right:-120px;
+opacity:0.25;
 }
 
 .hero-content{
-max-width:750px;
+position:relative;
+z-index:2;
+max-width:760px;
+padding-top:120px;
 }
 
-.hero-content h1{
-font-size:80px;
-line-height:1.05;
-font-weight:900;
+.tag{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:12px 20px;
+background:rgba(34,211,238,0.12);
+border:1px solid rgba(34,211,238,0.3);
+border-radius:100px;
 margin-bottom:30px;
 }
 
-.hero-content h1 span{
-color:#2196f3;
+.dot{
+width:10px;
+height:10px;
+background:#22d3ee;
+border-radius:50%;
+animation:pulse 1.5s infinite;
 }
 
-.hero-content p{
+@keyframes pulse{
+0%{opacity:1;}
+50%{opacity:0.3;}
+100%{opacity:1;}
+}
+
+.hero h1{
+font-size:82px;
+line-height:1.05;
+font-family:'Playfair Display',serif;
+margin-bottom:28px;
+}
+
+.hero h1 span{
+color:#22d3ee;
+}
+
+.hero p{
 font-size:18px;
 line-height:1.9;
-color:#a0a0a0;
+color:#9ca3af;
 margin-bottom:40px;
+max-width:650px;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-padding:16px 38px;
-background:#2196f3;
+padding:16px 34px;
 border-radius:14px;
 text-decoration:none;
-color:white;
 font-weight:600;
 transition:0.3s;
-box-shadow:0 0 25px rgba(33,150,243,0.35);
+display:inline-block;
 }
 
-.btn:hover{
-transform:translateY(-5px);
-background:#42a5f5;
+.btn-primary{
+background:#22d3ee;
+color:black;
+box-shadow:0 0 25px rgba(34,211,238,0.35);
+}
+
+.btn-primary:hover{
+transform:translateY(-4px);
+}
+
+.btn-outline{
+border:1px solid rgba(255,255,255,0.15);
+color:white;
+background:rgba(255,255,255,0.03);
+}
+
+.btn-outline:hover{
+background:rgba(255,255,255,0.08);
 }
 
 section{
-padding:130px 10%;
+padding:130px 0;
 }
 
 .section-title{
+font-size:56px;
+font-family:'Playfair Display',serif;
 text-align:center;
-font-size:52px;
-font-weight:800;
 margin-bottom:20px;
+}
+
+.section-title span{
+color:#22d3ee;
 }
 
 .section-subtitle{
 text-align:center;
-max-width:800px;
+max-width:750px;
 margin:auto;
-font-size:17px;
-line-height:1.8;
-color:#8c8c8c;
-margin-bottom:80px;
+color:#9ca3af;
+line-height:1.9;
+margin-bottom:70px;
 }
 
-.about-grid{
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:28px;
+}
+
+.card{
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.08);
+padding:40px;
+border-radius:28px;
+backdrop-filter:blur(10px);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:rgba(34,211,238,0.5);
+box-shadow:0 0 30px rgba(34,211,238,0.08);
+}
+
+.number{
+font-size:58px;
+font-weight:800;
+color:#22d3ee;
+margin-bottom:20px;
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:18px;
+}
+
+.card p{
+line-height:1.9;
+color:#9ca3af;
+}
+
+.showcase{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:35px;
+gap:28px;
 }
 
-.about-card{
-background:#111;
-padding:45px;
+.showcase-item{
+background:#0b0b0b;
 border-radius:30px;
-border:1px solid #1a1a1a;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.08);
 transition:0.4s;
 }
 
-.about-card:hover{
+.showcase-item:hover{
 transform:translateY(-10px);
-border-color:#2196f3;
 }
 
-.about-card h3{
-font-size:30px;
-margin-bottom:20px;
-color:#2196f3;
+.showcase-image{
+height:240px;
+background:linear-gradient(135deg,#06b6d4,#1e3a8a);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:42px;
+font-weight:700;
 }
 
-.about-card p{
-line-height:1.9;
-color:#aaa;
+.showcase-content{
+padding:30px;
 }
 
-.stats{
+.showcase-content h3{
+margin-bottom:12px;
+font-size:26px;
+}
+
+.showcase-content p{
+color:#9ca3af;
+line-height:1.8;
+}
+
+.pricing{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:70px;
-}
-
-.stat-box{
-background:#111;
-padding:45px;
-border-radius:30px;
-text-align:center;
-border:1px solid #1a1a1a;
-transition:0.4s;
-}
-
-.stat-box:hover{
-transform:translateY(-10px);
-border-color:#2196f3;
-}
-
-.stat-box h2{
-font-size:60px;
-margin-bottom:10px;
-color:#2196f3;
-}
-
-.stat-box p{
-color:#aaa;
-}
-
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
-
-.service-card{
-background:#111;
-padding:45px;
-border-radius:30px;
-border:1px solid #1a1a1a;
-transition:0.4s;
-}
-
-.service-card:hover{
-transform:translateY(-10px);
-border-color:#2196f3;
-box-shadow:0 0 35px rgba(33,150,243,0.12);
-}
-
-.service-number{
-font-size:60px;
-font-weight:900;
-color:#2196f3;
-margin-bottom:25px;
-}
-
-.service-card h3{
-font-size:28px;
-margin-bottom:20px;
-}
-
-.service-card p{
-color:#aaa;
-line-height:1.9;
-}
-
-.why-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
-
-.why-card{
-background:#111;
-padding:45px;
-border-radius:30px;
-border:1px solid #1a1a1a;
-transition:0.4s;
-}
-
-.why-card:hover{
-transform:translateY(-10px);
-border-color:#2196f3;
-}
-
-.why-card h3{
-font-size:28px;
-margin-bottom:20px;
-color:#2196f3;
-}
-
-.why-card p{
-color:#aaa;
-line-height:1.9;
-}
-
-.pricing-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
 }
 
 .price-card{
-background:#111;
-padding:50px;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.08);
+padding:50px 40px;
 border-radius:30px;
-border:1px solid #1a1a1a;
 text-align:center;
 transition:0.4s;
 }
 
 .price-card:hover{
 transform:translateY(-10px);
-border-color:#2196f3;
+border-color:#22d3ee;
 }
 
 .price-card h3{
 font-size:32px;
 margin-bottom:20px;
-color:#2196f3;
 }
 
 .price{
-font-size:58px;
-font-weight:900;
-margin-bottom:30px;
+font-size:64px;
+font-weight:800;
+color:#22d3ee;
+margin-bottom:25px;
 }
 
 .price-card ul{
@@ -316,208 +356,85 @@ margin-bottom:35px;
 
 .price-card ul li{
 margin-bottom:14px;
-color:#aaa;
+color:#9ca3af;
 }
 
 .cta{
-background:linear-gradient(to right,#0d47a1,#1565c0);
-padding:110px 40px;
+background:linear-gradient(135deg,#0f172a,#082f49);
+padding:90px 40px;
 border-radius:40px;
 text-align:center;
+border:1px solid rgba(34,211,238,0.15);
 }
 
 .cta h2{
-font-size:60px;
+font-size:58px;
+font-family:'Playfair Display',serif;
 margin-bottom:25px;
 }
 
 .cta p{
-max-width:750px;
+max-width:700px;
 margin:auto;
 line-height:1.9;
-font-size:18px;
-margin-bottom:40px;
-color:#ddd;
+color:#9ca3af;
+margin-bottom:35px;
 }
 
 footer{
-padding:45px;
+padding:50px 0;
 text-align:center;
-border-top:1px solid #1a1a1a;
-color:#777;
+color:#6b7280;
+border-top:1px solid rgba(255,255,255,0.08);
 }
 
-@media(max-width:900px){
-.hero{text-align:center;}
-.hero-content h1{font-size:50px;}
-nav{display:none;}
-.section-title{font-size:40px;}
-.cta h2{font-size:42px;}
-}
-
-/* ANIMATIONS */
-
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(40px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-18px);}
-}
-
-@keyframes glow{
-0%,100%{box-shadow:0 0 25px rgba(33,150,243,0.35);}
-50%{box-shadow:0 0 55px rgba(33,150,243,0.75);}
-}
-
-@keyframes slideInLeft{
-from{opacity:0;transform:translateX(-60px);}
-to{opacity:1;transform:translateX(0);}
-}
-
-@keyframes pulse{
-0%,100%{opacity:1;}
-50%{opacity:0.5;}
-}
-
-@keyframes typing{
-from{width:0;}
-to{width:100%;}
-}
-
-@keyframes blink{
-50%{border-color:transparent;}
-}
-
-@keyframes countUp{
-from{opacity:0;transform:scale(0.5);}
-to{opacity:1;transform:scale(1);}
-}
-
-/* HERO ANIMATIONS */
-
-.hero-content h1{
-animation:slideInLeft 1s ease forwards;
-}
-
-.hero-content p{
-animation:fadeUp 1s ease 0.3s both;
-}
-
-.hero-content .btn{
-animation:fadeUp 1s ease 0.6s both;
-animation-name:fadeUp,glow;
-animation-duration:1s,3s;
-animation-delay:0.6s,1.5s;
-animation-fill-mode:both,none;
-animation-iteration-count:1,infinite;
-}
-
-/* FLOATING HERO BG */
-
-.hero::before{
-content:'';
-position:absolute;
-width:500px;
-height:500px;
-background:radial-gradient(circle,rgba(33,150,243,0.08),transparent 70%);
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:65px;
+height:65px;
 border-radius:50%;
-top:20%;
-right:10%;
-animation:float 6s ease-in-out infinite;
-pointer-events:none;
+background:#25d366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+text-decoration:none;
+color:white;
+z-index:1000;
+box-shadow:0 0 25px rgba(0,0,0,0.4);
 }
 
-/* SCROLL REVEAL */
-
-.reveal{
+.hidden{
 opacity:0;
 transform:translateY(40px);
-transition:opacity 0.7s ease,transform 0.7s ease;
+transition:1s;
 }
 
-.reveal.visible{
+.show{
 opacity:1;
 transform:translateY(0);
 }
 
-/* STAT COUNTER */
+@media(max-width:900px){
 
-.stat-box h2{
-animation:countUp 0.8s ease both;
+.hero h1{
+font-size:52px;
 }
 
-/* TYPING CURSOR ON LOGO */
-
-.logo::after{
-content:'|';
-color:#2196f3;
-animation:pulse 1s infinite;
-margin-left:2px;
+.section-title{
+font-size:42px;
 }
 
-/* CARD SHINE EFFECT */
-
-.about-card,.service-card,.why-card,.price-card,.stat-box{
-position:relative;
-overflow:hidden;
+.cta h2{
+font-size:42px;
 }
 
-.about-card::before,.service-card::before,.why-card::before,.price-card::before{
-content:'';
-position:absolute;
-top:-100%;
-left:-100%;
-width:60%;
-height:200%;
-background:linear-gradient(120deg,transparent,rgba(33,150,243,0.06),transparent);
-transition:0.6s;
+.nav-links{
+display:none;
 }
 
-.about-card:hover::before,.service-card:hover::before,.why-card:hover::before,.price-card:hover::before{
-top:0;
-left:150%;
-}
-
-/* SECTION TITLE UNDERLINE */
-
-.section-title::after{
-content:'';
-display:block;
-width:80px;
-height:4px;
-background:#2196f3;
-border-radius:4px;
-margin:18px auto 0;
-animation:fadeIn 1s ease;
-}
-
-/* NAV LINK UNDERLINE */
-
-nav a{
-position:relative;
-}
-
-nav a::after{
-content:'';
-position:absolute;
-bottom:-4px;
-left:0;
-width:0;
-height:2px;
-background:#2196f3;
-transition:0.3s;
-}
-
-nav a:hover::after{
-width:100%;
 }
 
 </style>
@@ -525,95 +442,166 @@ width:100%;
 <body>
 
 <header>
-<div class="navbar">
-<div class="logo">KENPRO <span>TECH</span></div>
+<div class="container">
 <nav>
+<div class="logo">KENPRO <span>TECH</span></div>
+
+<div class="nav-links">
 <a href="#home">Home</a>
-<a href="#about">About</a>
 <a href="#services">Services</a>
+<a href="#work">Work</a>
 <a href="#pricing">Pricing</a>
 <a href="#contact">Contact</a>
+</div>
 </nav>
 </div>
 </header>
 
 <section class="hero" id="home">
-<div class="hero-content">
-<h1>Building Modern <span>Digital Experiences</span></h1>
-<p>KENPRO TECH is a modern web development and digital solutions brand based in Kampala, Uganda focused on creating premium websites, branding, UI/UX design, and online experiences for businesses, schools, organizations, startups, and NGOs.</p>
-<a href="https://wa.me/256702381857" class="btn">Start Your Project</a>
-</div>
-</section>
 
-<section id="about">
-<h2 class="section-title">About Us</h2>
-<p class="section-subtitle">Modern digital solutions designed to help businesses and organizations grow online professionally.</p>
-<div class="about-grid">
-<div class="about-card">
-<h3>Who We Are</h3>
-<p>KENPRO TECH is founded by Ken, a young Ugandan developer passionate about building professional, modern, and responsive websites with clean user experiences and premium digital branding.</p>
+<div class="glow1"></div>
+<div class="glow2"></div>
+
+<div class="container">
+<div class="hero-content">
+
+<div class="tag">
+<div class="dot"></div>
+Modern Digital Agency
 </div>
-<div class="about-card">
-<h3>Our Vision</h3>
-<p>To become one of Uganda's growing modern digital brands helping businesses, schools, NGOs, churches, and startups build strong online presence and professional identity.</p>
+
+<h1>
+We Build <span>Modern</span><br>
+Digital Experiences
+</h1>
+
+<p>
+KENPRO TECH helps businesses, schools, NGOs, startups, churches, and organizations build premium online presence through modern web development, branding, and digital solutions.
+</p>
+
+<div class="hero-buttons">
+<a href="https://wa.me/256702381857" class="btn btn-primary">Start Your Project</a>
+<a href="#services" class="btn btn-outline">Explore Services</a>
 </div>
+
 </div>
-<div class="stats">
-<div class="stat-box"><h2>17</h2><p>Young Developer</p></div>
-<div class="stat-box"><h2>10+</h2><p>Client Prospects</p></div>
-<div class="stat-box"><h2>24/7</h2><p>Support</p></div>
-<div class="stat-box"><h2>100%</h2><p>Dedication</p></div>
 </div>
 </section>
 
 <section id="services">
-<h2 class="section-title">Services</h2>
-<p class="section-subtitle">Professional digital services tailored for modern businesses and organizations.</p>
-<div class="services-grid">
-<div class="service-card">
-<div class="service-number">01</div>
+<div class="container">
+
+<h2 class="section-title">
+Premium <span>Services</span>
+</h2>
+
+<p class="section-subtitle">
+Modern digital solutions designed to help brands and businesses stand out professionally online.
+</p>
+
+<div class="grid">
+
+<div class="card hidden">
+<div class="number">01</div>
 <h3>Web Development</h3>
-<p>Professional responsive websites designed for businesses, schools, NGOs, hospitals, churches, and startups.</p>
+<p>
+Professional responsive websites optimized for mobile devices, performance, and modern user experience.
+</p>
 </div>
-<div class="service-card">
-<div class="service-number">02</div>
+
+<div class="card hidden">
+<div class="number">02</div>
 <h3>UI/UX Design</h3>
-<p>Modern and clean user interface designs optimized for mobile devices and premium user experiences.</p>
+<p>
+Premium interfaces and clean user experiences designed with modern aesthetics and usability in mind.
+</p>
 </div>
-<div class="service-card">
-<div class="service-number">03</div>
+
+<div class="card hidden">
+<div class="number">03</div>
 <h3>Brand Identity</h3>
-<p>Professional branding solutions helping businesses create strong digital identity and online visibility.</p>
+<p>
+Strong digital branding and online identity solutions helping businesses grow professionally.
+</p>
+</div>
+
 </div>
 </div>
 </section>
 
-<section>
-<h2 class="section-title">Why Choose KENPRO TECH</h2>
-<p class="section-subtitle">Focused on quality, modern design, performance, and client satisfaction.</p>
-<div class="why-grid">
-<div class="why-card"><h3>Modern Design</h3><p>Clean modern layouts inspired by professional technology brands and premium digital agencies.</p></div>
-<div class="why-card"><h3>Fast Delivery</h3><p>Efficient development workflow helping clients receive projects faster without compromising quality.</p></div>
-<div class="why-card"><h3>Affordable Pricing</h3><p>Professional digital services starting from only 250K UGX for businesses and organizations.</p></div>
+<section id="work">
+<div class="container">
+
+<h2 class="section-title">
+Selected <span>Work</span>
+</h2>
+
+<p class="section-subtitle">
+Modern website experiences designed and developed by KENPRO TECH.
+</p>
+
+<div class="showcase">
+
+<div class="showcase-item hidden">
+<div class="showcase-image">UI</div>
+<div class="showcase-content">
+<h3>Business Landing Page</h3>
+<p>
+Modern responsive landing page designed for professional business presentation.
+</p>
+</div>
+</div>
+
+<div class="showcase-item hidden">
+<div class="showcase-image">WEB</div>
+<div class="showcase-content">
+<h3>Agency Website</h3>
+<p>
+Premium digital agency style interface with clean layouts and smooth experiences.
+</p>
+</div>
+</div>
+
+<div class="showcase-item hidden">
+<div class="showcase-image">APP</div>
+<div class="showcase-content">
+<h3>Modern Dashboard</h3>
+<p>
+Modern dashboard and interface systems focused on clean structure and usability.
+</p>
+</div>
+</div>
+
+</div>
 </div>
 </section>
 
 <section id="pricing">
-<h2 class="section-title">Pricing</h2>
-<p class="section-subtitle">Affordable packages designed for every business size.</p>
-<div class="pricing-grid">
-<div class="price-card">
+<div class="container">
+
+<h2 class="section-title">
+Pricing <span>Packages</span>
+</h2>
+
+<p class="section-subtitle">
+Affordable packages for businesses and organizations of every size.
+</p>
+
+<div class="pricing">
+
+<div class="price-card hidden">
 <h3>Basic</h3>
 <div class="price">250K</div>
 <ul>
+<li>Responsive Website</li>
 <li>3–5 Pages</li>
-<li>Responsive Design</li>
 <li>WhatsApp Integration</li>
 <li>Contact Form</li>
 </ul>
-<a href="https://wa.me/256702381857" class="btn">Choose Plan</a>
+<a href="https://wa.me/256702381857" class="btn btn-primary">Choose Plan</a>
 </div>
-<div class="price-card">
+
+<div class="price-card hidden">
 <h3>Standard</h3>
 <div class="price">400K</div>
 <ul>
@@ -622,9 +610,10 @@ width:100%;
 <li>SEO Setup</li>
 <li>Professional Layout</li>
 </ul>
-<a href="https://wa.me/256702381857" class="btn">Choose Plan</a>
+<a href="https://wa.me/256702381857" class="btn btn-primary">Choose Plan</a>
 </div>
-<div class="price-card">
+
+<div class="price-card hidden">
 <h3>Premium</h3>
 <div class="price">550K</div>
 <ul>
@@ -633,57 +622,81 @@ width:100%;
 <li>Branding Support</li>
 <li>Priority Support</li>
 </ul>
-<a href="https://wa.me/256702381857" class="btn">Choose Plan</a>
+<a href="https://wa.me/256702381857" class="btn btn-primary">Choose Plan</a>
+</div>
+
 </div>
 </div>
 </section>
 
 <section id="contact">
-<div class="cta">
-<h2>Let's Build Something Great</h2>
-<p>Need a professional website or digital solution for your business? Contact KENPRO TECH today and let's grow your online presence.</p>
-<a href="https://wa.me/256702381857" class="btn">WhatsApp: +256702381857</a>
+<div class="container">
+<div class="cta hidden">
+
+<h2>
+Ready To Grow Online?
+</h2>
+
+<p>
+Need a modern website, branding, or digital solution? Contact KENPRO TECH today and build your online presence professionally.
+</p>
+
+<div class="hero-buttons" style="justify-content:center;">
+<a href="https://wa.me/256702381857" class="btn btn-primary">
+WhatsApp Us
+</a>
+
+<a href="mailto:hello@kenprotech.pro" class="btn btn-outline">
+Send Email
+</a>
+</div>
+
+</div>
 </div>
 </section>
 
+<footer>
+<div class="container">
+© 2026 KENPRO TECH • Modern Web Development & Digital Solutions
+</div>
+</footer>
+
+<a href="https://wa.me/256702381857" class="whatsapp">💬</a>
+
 <script>
-// Scroll reveal
-const reveals = document.querySelectorAll('.about-card,.stat-box,.service-card,.why-card,.price-card,.section-title,.section-subtitle');
-reveals.forEach(el => el.classList.add('reveal'));
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if(entry.isIntersecting){
-      setTimeout(() => entry.target.classList.add('visible'), i * 100);
-    }
-  });
-}, {threshold: 0.1});
-
-reveals.forEach(el => observer.observe(el));
-
-// Smooth counter animation
-const stats = document.querySelectorAll('.stat-box h2');
-stats.forEach(stat => {
-  const target = stat.innerText;
-  const isNum = !isNaN(parseInt(target));
-  if(!isNum) return;
-  const num = parseInt(target);
-  const suffix = target.replace(num.toString(), '');
-  let current = 0;
-  const step = Math.ceil(num / 40);
-  const statObserver = new IntersectionObserver((entries) => {
-    if(entries[0].isIntersecting){
-      const timer = setInterval(() => {
-        current += step;
-        if(current >= num){ current = num; clearInterval(timer); }
-        stat.innerText = current + suffix;
-      }, 40);
-      statObserver.disconnect();
-    }
-  });
-  statObserver.observe(stat);
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach((entry)=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
 });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el)=>observer.observe(el));
+
 </script>
 
 </body>
 </html>
+```
+
+## What To Do Next
+
+1. Save as `index.html`
+2. Upload to GitHub or hosting
+3. Replace portfolio placeholders later with real screenshots
+4. Add favicon/logo later if needed
+5. Keep posting content consistently
+
+This version is:
+
+* cleaner
+* more premium
+* modern
+* mobile responsive
+* professional
+* fast
+* easier to manage
+* agency style
