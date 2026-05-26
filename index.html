@@ -22,7 +22,6 @@
             font-family: 'Space Grotesk', sans-serif;
         }
         
-        /* Particle Background Canvas */
         #particles-js {
             position: absolute;
             width: 100%;
@@ -31,10 +30,9 @@
             left: 0;
             z-index: 1;
             opacity: 0.3;
-            pointer-events: none; /* Let clicks pass through */
+            pointer-events: none;
         }
         
-        /* Premium Shimmer and Metallic Effects */
         @keyframes metallicShimmer {
             0% { background-position: -200%; }
             100% { background-position: 200%; }
@@ -47,7 +45,6 @@
             animation: metallicShimmer 6s linear infinite;
         }
         
-        /* Interactive 3D Card Perspective */
         .card-perspective {
             perspective: 2000px;
         }
@@ -62,7 +59,6 @@
             box-shadow: 0 0 50px -10px rgba(255, 255, 255, 0.05);
         }
 
-        /* Persistent Floating Micro-Animations */
         @keyframes continuousFloat {
             0% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-12px) rotate(2deg); }
@@ -72,7 +68,6 @@
             animation: continuousFloat 5s ease-in-out infinite;
         }
 
-        /* Continuous Glitch/Shimmer for Logo */
         @keyframes logoGlitch {
             0% { filter: contrast(1); opacity: 1; }
             10% { filter: contrast(1.1); opacity: 0.98; }
@@ -93,7 +88,7 @@
     <nav class="sticky top-0 bg-[#06090e]/80 backdrop-blur-xl border-b border-white/5 z-50">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center relative z-10">
             <a href="#" class="flex items-center space-x-3 group">
-                <img src="https://i.postimg.cc/85z11y29/K-3D-LOGO-WEB-HEADER.png" alt="Kentech Logo" class="h-10 w-auto animate-logo">
+                <img src="logo.jpg" alt="Kentech Logo" class="h-10 w-auto rounded animate-logo object-cover">
                 <span class="font-display font-bold text-xl tracking-widest text-white group-hover:text-emerald-500 transition">KENTECH</span>
             </a>
             <div class="hidden md:flex space-x-8 text-xs font-semibold uppercase tracking-widest text-slate-400">
@@ -136,7 +131,7 @@
 
             <div class="md:col-span-5 flex justify-center p-8 relative" data-aos="fade-left">
                 <div class="absolute w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl opacity-50 animate-pulse"></div>
-                <img src="https://i.postimg.cc/mDdyP49N/K-3D-LOGO-MAIN-HERO.png" alt="Kentech Web Development 3D Logo" class="w-full h-auto max-w-sm animate-float">
+                <img src="logo.jpg" alt="Kentech Web Development 3D Logo" class="w-full h-auto max-w-sm animate-float rounded-2xl shadow-2xl border border-white/10 relative z-10 object-cover">
             </div>
 
         </div>
@@ -407,15 +402,13 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-        // Init Scroll Animations
         AOS.init({
             once: true,
             duration: 900,
             offset: 150,
-            easing: 'cubic-bezier(0.16, 1, 0.3, 1)' // Custom modern easing
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
         });
 
-        // Config Particle Network for Continuous Background Animation
         particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
@@ -429,7 +422,7 @@
             "interactivity": {
                 "detect_on": "canvas",
                 "events": {
-                    "onhover": { "enable": true, "mode": "grab" }, /* Mouse movement responds */
+                    "onhover": { "enable": true, "mode": "grab" },
                     "onclick": { "enable": true, "mode": "push" }
                 },
                 "modes": {
