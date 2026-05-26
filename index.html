@@ -16,65 +16,87 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
             background-color: #06090e;
+            overflow-x: hidden;
         }
         .font-display {
             font-family: 'Space Grotesk', sans-serif;
         }
-        .text-gradient {
+        
+        /* Particle Background Canvas */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            opacity: 0.3;
+            pointer-events: none; /* Let clicks pass through */
+        }
+        
+        /* Premium Shimmer and Metallic Effects */
+        @keyframes metallicShimmer {
+            0% { background-position: -200%; }
+            100% { background-position: 200%; }
+        }
+        .metallic-text {
             background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #64748b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-        .premium-glow {
-            box-shadow: 0 0 40px -10px rgba(255, 255, 255, 0.02);
-        }
-        .card-interaction {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .card-interaction:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 20px 40px -15px rgba(255, 255, 255, 0.06);
+            background-size: 200% auto;
+            animation: metallicShimmer 6s linear infinite;
         }
         
-        /* Interactive 3D CSS Assets */
-        .threed-wrap {
-            perspective: 1000px;
+        /* Interactive 3D Card Perspective */
+        .card-perspective {
+            perspective: 2000px;
         }
-        .threed-element {
+        .card-inner {
             transform-style: preserve-3d;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .threed-wrap:hover .threed-element {
-            transform: rotateY(15deg) rotateX(10deg);
+        .card-perspective:hover .card-inner {
+            transform: rotateY(12deg) rotateX(8deg) translateY(-10px);
         }
-
-        /* 3D Gold Crown/Throne asset styles */
-        .crown-base {
-            background: linear-gradient(135deg, #eab308 0%, #ca8a04 50%, #854d0e 100%);
-            clip-path: polygon(10% 90%, 90% 90%, 100% 30%, 75% 60%, 50% 10%, 25% 60%, 0% 30%);
-            filter: drop-shadow(0 10px 15px rgba(234, 179, 8, 0.3));
+        .card-glow {
+            box-shadow: 0 0 50px -10px rgba(255, 255, 255, 0.05);
         }
 
-        @keyframes microFloat {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
+        /* Persistent Floating Micro-Animations */
+        @keyframes continuousFloat {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
         }
         .animate-float {
-            animation: microFloat 5s ease-in-out infinite;
+            animation: continuousFloat 5s ease-in-out infinite;
+        }
+
+        /* Continuous Glitch/Shimmer for Logo */
+        @keyframes logoGlitch {
+            0% { filter: contrast(1); opacity: 1; }
+            10% { filter: contrast(1.1); opacity: 0.98; }
+            11% { filter: contrast(1); opacity: 1; }
+            70% { filter: contrast(1); opacity: 1; }
+            71% { filter: contrast(1.2) hue-rotate(5deg); opacity: 0.96; }
+            72% { filter: contrast(1); opacity: 1; }
+        }
+        .animate-logo {
+            animation: logoGlitch 7s infinite;
         }
     </style>
 </head>
-<body class="text-slate-400 antialiased overflow-x-hidden">
+<body class="text-slate-400 antialiased relative">
+
+    <div id="particles-js"></div>
 
     <nav class="sticky top-0 bg-[#06090e]/80 backdrop-blur-xl border-b border-white/5 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center relative z-10">
             <a href="#" class="flex items-center space-x-3 group">
-                <span class="font-display font-bold text-xl tracking-widest text-white">KENTECH</span>
+                <img src="https://i.postimg.cc/85z11y29/K-3D-LOGO-WEB-HEADER.png" alt="Kentech Logo" class="h-10 w-auto animate-logo">
+                <span class="font-display font-bold text-xl tracking-widest text-white group-hover:text-emerald-500 transition">KENTECH</span>
             </a>
             <div class="hidden md:flex space-x-8 text-xs font-semibold uppercase tracking-widest text-slate-400">
-                <a href="#about" class="hover:text-white transition">About</a>
                 <a href="#expertise" class="hover:text-white transition">Expertise</a>
                 <a href="#projects" class="hover:text-white transition">Portfolio</a>
                 <a href="#pricing" class="hover:text-white transition">Packages</a>
@@ -91,13 +113,12 @@
         </div>
     </nav>
 
-    <header id="about" class="relative min-h-[90vh] flex items-center justify-center pt-16 pb-24 px-6 overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_0%,transparent_70%)]"></div>
+    <header id="hero" class="relative min-h-[90vh] flex items-center justify-center pt-16 pb-24 px-6 overflow-hidden">
         <div class="max-w-5xl mx-auto text-center relative z-10 grid md:grid-cols-12 gap-12 items-center">
             
             <div class="md:col-span-7 text-left" data-aos="fade-right">
                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4 block">Web Architect & Developer</span>
-                <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-none">
+                <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tight metallic-text mb-6 leading-none">
                     High-End Digital Infrastructure.
                 </h1>
                 <p class="text-base text-slate-400 mb-8 max-w-lg leading-relaxed font-light">
@@ -113,55 +134,63 @@
                 </div>
             </div>
 
-            <div class="md:col-span-5 threed-wrap flex justify-center" data-aos="fade-left">
-                <div class="threed-element w-72 h-72 rounded-2xl bg-gradient-to-br from-[#111723] to-[#090d14] border border-white/10 flex flex-col items-center justify-center p-6 shadow-2xl relative">
-                    <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_45%,rgba(255,255,255,0.05)_50%,transparent_55%)] bg-[size:200%_200%] animate-[shimmer_6s_infinite]"></div>
-                    <div class="w-24 h-24 mb-4 flex items-center justify-center border-2 border-white/20 bg-white/5 rounded-xl shadow-inner relative transform translate-z-10">
-                        <span class="font-display font-bold text-5xl text-white tracking-tighter">K</span>
-                        <div class="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-slate-400 animate-pulse"></div>
-                    </div>
-                    <div class="font-display font-bold text-2xl tracking-widest text-white">KENTECH</div>
-                    <div class="text-[10px] tracking-widest uppercase text-slate-500 mt-1">Web Development</div>
-                </div>
+            <div class="md:col-span-5 flex justify-center p-8 relative" data-aos="fade-left">
+                <div class="absolute w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl opacity-50 animate-pulse"></div>
+                <img src="https://i.postimg.cc/mDdyP49N/K-3D-LOGO-MAIN-HERO.png" alt="Kentech Web Development 3D Logo" class="w-full h-auto max-w-sm animate-float">
             </div>
 
         </div>
     </header>
 
-    <section id="expertise" class="py-28 border-t border-white/5 bg-[#04070a]">
+    <section id="expertise" class="py-28 border-t border-white/5 bg-[#04070a] relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="max-w-xl mb-20" data-aos="fade-up">
                 <span class="text-slate-600 font-bold uppercase tracking-widest text-xs block mb-2">Capabilities</span>
                 <h2 class="font-display text-3xl md:text-4xl font-bold text-white tracking-tight">Technical Excellence</h2>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-[#090d14] p-8 rounded-xl border border-white/5 card-interaction premium-glow" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-10 h-10 border border-white/10 rounded-md flex items-center justify-center text-white mb-6 bg-white/5">
-                        <i class="fa-solid fa-compass-drafting text-sm"></i>
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                <div class="bg-[#090d14] p-8 rounded-xl border border-white/5 card-perspective card-glow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-inner flex flex-col justify-between h-full space-y-6">
+                        <div>
+                            <div class="w-10 h-10 border border-white/10 rounded-md flex items-center justify-center text-white mb-6 bg-white/5">
+                                <i class="fa-solid fa-compass-drafting text-sm"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-3 font-display tracking-wide">Premium UI/UX Design</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed font-light">Custom interfaces mapped cleanly with intuitive layouts, strict structural hierarchies, and clean typography treatments.</p>
+                        </div>
+                        <div class="w-full h-1 bg-gradient-to-r from-emerald-600 to-transparent rounded-full opacity-50"></div>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-3 font-display tracking-wide">Premium UI/UX Design</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed font-light">Custom interfaces mapped cleanly with intuitive layouts, strict structural hierarchies, and clean typography treatments.</p>
                 </div>
-                <div class="bg-[#090d14] p-8 rounded-xl border border-white/5 card-interaction premium-glow" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-10 h-10 border border-white/10 rounded-md flex items-center justify-center text-white mb-6 bg-white/5">
-                        <i class="fa-solid fa-terminal text-sm"></i>
+                <div class="bg-[#090d14] p-8 rounded-xl border border-white/5 card-perspective card-glow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-inner flex flex-col justify-between h-full space-y-6">
+                        <div>
+                            <div class="w-10 h-10 border border-white/10 rounded-md flex items-center justify-center text-white mb-6 bg-white/5">
+                                <i class="fa-solid fa-terminal text-sm"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-3 font-display tracking-wide">Full-Stack Development</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed font-light">Optimized runtime processing logic, robust security frameworks, and seamless custom business email integrations.</p>
+                        </div>
+                        <div class="w-full h-1 bg-gradient-to-r from-emerald-600 to-transparent rounded-full opacity-50"></div>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-3 font-display tracking-wide">Full-Stack Development</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed font-light">Optimized runtime processing logic, robust security frameworks, and seamless custom business email integrations.</p>
                 </div>
-                <div class="bg-[#090d14] p-8 rounded-xl border border-white/5 card-interaction premium-glow" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-10 h-10 border border-white/10 rounded-md flex items-center justify-center text-white mb-6 bg-white/5">
-                        <i class="fa-solid fa-cubes text-sm"></i>
+                <div class="bg-[#090d14] p-8 rounded-xl border border-white/5 card-perspective card-glow" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-inner flex flex-col justify-between h-full space-y-6">
+                        <div>
+                            <div class="w-10 h-10 border border-white/10 rounded-md flex items-center justify-center text-white mb-6 bg-white/5">
+                                <i class="fa-solid fa-cubes text-sm"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-3 font-display tracking-wide">Interactive 3D Elements</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed font-light">Advanced application behavior configurations using custom animation modules and responsive graphic styling profiles.</p>
+                        </div>
+                        <div class="w-full h-1 bg-gradient-to-r from-emerald-600 to-transparent rounded-full opacity-50"></div>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-3 font-display tracking-wide">Interactive 3D Elements</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed font-light">Advanced application behavior configurations using custom animation modules and responsive graphic styling profiles.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-28 border-t border-white/5">
+    <section id="projects" class="py-28 border-t border-white/5 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="max-w-xl mb-20" data-aos="fade-up">
                 <span class="text-slate-600 font-bold uppercase tracking-widest text-xs block mb-2">Production History</span>
@@ -169,16 +198,16 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-12">
-                <div class="group block bg-[#090d14] border border-white/5 rounded-xl overflow-hidden card-interaction" data-aos="fade-up">
-                    <div class="aspect-video w-full relative overflow-hidden bg-gradient-to-br from-slate-900 to-[#0c121c] flex items-center justify-center p-12">
-                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_60%)]"></div>
-                        <div class="w-full h-full rounded-lg border border-white/10 bg-[#05080d]/90 backdrop-blur p-5 flex flex-col justify-between shadow-2xl relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+                <div class="group relative block bg-[#090d14] border border-white/5 rounded-xl overflow-hidden card-perspective card-glow" data-aos="fade-up">
+                    <div class="aspect-video w-full relative overflow-hidden bg-gradient-to-br from-slate-900 to-[#0c121c] flex items-center justify-center p-12 transition-transform duration-700 ease-out group-hover:scale-105">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_60%)] animate-pulse"></div>
+                        <div class="w-full h-full rounded-lg border border-white/10 bg-[#05080d]/90 backdrop-blur p-5 flex flex-col justify-between shadow-2xl relative z-10 group-hover:rotate-1">
                             <div class="flex items-center justify-between text-[10px] uppercase tracking-widest text-slate-500 font-mono">
                                 <span>Production Environment</span>
                                 <i class="fa-solid fa-shield-halved text-emerald-500"></i>
                             </div>
                             <div class="my-auto py-4">
-                                <h4 class="font-display text-xl font-bold text-white tracking-wide mb-1">E-Commerce Deployment</h4>
+                                <h4 class="font-display text-xl font-bold text-white tracking-wide mb-1 metallic-text">E-Commerce Deployment</h4>
                                 <p class="text-xs text-slate-400 font-light">Custom engine with integrated high-speed product filtering architectures.</p>
                             </div>
                             <div class="flex gap-2">
@@ -187,22 +216,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-6 border-t border-white/5">
+                    <div class="p-6 border-t border-white/5 relative z-20 bg-[#090d14]">
                         <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500 block mb-1">Case Study</span>
                         <h3 class="text-lg font-bold text-white font-display">Dynamic E-Commerce Infrastructure</h3>
                     </div>
                 </div>
 
-                <div class="group block bg-[#090d14] border border-white/5 rounded-xl overflow-hidden card-interaction" data-aos="fade-up" data-aos-delay="200">
-                    <div class="aspect-video w-full relative overflow-hidden bg-gradient-to-br from-slate-900 to-[#0c121c] flex items-center justify-center p-12">
-                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_60%)]"></div>
-                        <div class="w-full h-full rounded-lg border border-white/10 bg-[#05080d]/90 backdrop-blur p-5 flex flex-col justify-between shadow-2xl relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+                <div class="group relative block bg-[#090d14] border border-white/5 rounded-xl overflow-hidden card-perspective card-glow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-video w-full relative overflow-hidden bg-gradient-to-br from-slate-900 to-[#0c121c] flex items-center justify-center p-12 transition-transform duration-700 ease-out group-hover:scale-105">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_60%)] animate-pulse"></div>
+                        <div class="w-full h-full rounded-lg border border-white/10 bg-[#05080d]/90 backdrop-blur p-5 flex flex-col justify-between shadow-2xl relative z-10 group-hover:rotate-1">
                             <div class="flex items-center justify-between text-[10px] uppercase tracking-widest text-slate-500 font-mono">
                                 <span>Live Application</span>
                                 <i class="fa-solid fa-bolt text-amber-500"></i>
                             </div>
                             <div class="my-auto py-4">
-                                <h4 class="font-display text-xl font-bold text-white tracking-wide mb-1">Corporate SaaS Interface</h4>
+                                <h4 class="font-display text-xl font-bold text-white tracking-wide mb-1 metallic-text">Corporate SaaS Interface</h4>
                                 <p class="text-xs text-slate-400 font-light">Multi-page optimized system aiming for ultimate performance metrics.</p>
                             </div>
                             <div class="flex gap-2">
@@ -211,7 +240,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-6 border-t border-white/5">
+                    <div class="p-6 border-t border-white/5 relative z-20 bg-[#090d14]">
                         <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500 block mb-1">Case Study</span>
                         <h3 class="text-lg font-bold text-white font-display">Tech Startup Platform Architecture</h3>
                     </div>
@@ -220,7 +249,7 @@
         </div>
     </section>
 
-    <section id="pricing" class="py-28 border-t border-white/5 bg-[#04070a]">
+    <section id="pricing" class="py-28 border-t border-white/5 bg-[#04070a] relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-24" data-aos="fade-up">
                 <span class="text-slate-600 font-bold uppercase tracking-widest text-xs block mb-2">Target Offerings</span>
@@ -230,91 +259,85 @@
 
             <div class="grid lg:grid-cols-3 gap-8 items-stretch">
                 
-                <div class="bg-[#090d14] border border-white/5 rounded-2xl p-8 flex flex-col justify-between card-interaction premium-glow" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-[#090d14] border border-white/5 rounded-2xl p-8 flex flex-col justify-between card-perspective card-glow" data-aos="fade-up" data-aos-delay="100">
                     <div>
                         <div class="w-20 h-20 mx-auto mb-8 rounded-full bg-radial from-slate-200 via-slate-600 to-slate-950 shadow-[inset_-4px_-4px_12px_rgba(0,0,0,0.8),0_10px_20px_rgba(0,0,0,0.5)] animate-float flex items-center justify-center">
                             <i class="fa-solid fa-layer-group text-white/30 text-xl"></i>
                         </div>
                         <div class="text-center">
-                            <h3 class="font-display text-lg font-bold tracking-widest text-white uppercase mb-2">🌐 Basic Package</h3>
-                            <div class="text-3xl font-display font-bold text-white tracking-tight my-4">250,000 <span class="text-xs font-sans text-slate-500 font-normal">UGX</span></div>
+                            <h3 class="font-display text-lg font-bold tracking-widest text-white uppercase mb-2">🌐 Basic Package Layout</h3>
+                            <div class="text-3xl font-display font-bold text-white tracking-tight my-4 metallic-text">250,000 <span class="text-xs font-sans text-slate-500 font-normal">UGX</span></div>
                             <p class="text-xs text-slate-400 font-light mb-6">Perfect for establishing immediate, credible online documentation for fresh ministries.</p>
                         </div>
                         <hr class="border-white/5 my-6">
                         <div class="space-y-4">
                             <h4 class="text-white font-semibold text-xs uppercase tracking-wider">What's Included:</h4>
-                            <ul class="space-y-3 text-xs text-slate-400 font-light">
-                                <li class="flex items-start"><i class="fa-solid fa-check text-slate-500 mt-0.5 mr-3"></i> <span><strong>Core Layout Configuration:</strong> Dedicated Home, About Us, Programs, Gallery, and Contact page frameworks.</span></li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-slate-500 mt-0.5 mr-3"></i> <span><strong>Responsive Screen Adaptation:</strong> Layout parameters resize cleanly to fit laptops, tablets, and phones perfectly.</span></li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-slate-500 mt-0.5 mr-3"></i> <span><strong>Basic Media Galleries:</strong> Display structured grid layouts showcasing orphanage programs and child profiles.</span></li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-slate-500 mt-0.5 mr-3"></i> <span><strong>Standard Interaction:</strong> Custom contact email capturing blocks built to register incoming site leads.</span></li>
+                            <ul class="space-y-3.5 text-xs text-slate-400 font-light">
+                                <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-0.5 mr-3"></i> <span><strong>Core Layout Configuration:</strong> Dedicated Home, About Us, Programs, Gallery, and Contact page frameworks. Layout parameters resize cleanly to fit laptops, tablets, and phones perfectly.</span></li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-0.5 mr-3"></i> <span><strong>Media Galleries:</strong> Display structured grid layouts showcasing orphanage programs and child profiles. Standard interaction contact block built to register incoming site leads.</span></li>
                             </ul>
                         </div>
                     </div>
                     <a href="#contact" class="mt-8 block text-center w-full bg-white/5 hover:bg-white/10 text-white border border-white/10 py-3 rounded-md font-semibold text-xs uppercase tracking-widest transition">Select Basic</a>
                 </div>
 
-                <div class="bg-[#0d131f] border-2 border-blue-500/30 rounded-2xl p-8 flex flex-col justify-between card-interaction shadow-[0_0_50px_rgba(37,99,219,0.08)] relative" data-aos="fade-up" data-aos-delay="200">
-                    <div class="absolute top-4 right-4 bg-blue-600 text-white font-bold tracking-widest text-[9px] uppercase px-3 py-1 rounded-sm">Recommended</div>
+                <div class="bg-[#0d131f] border-2 border-emerald-500/30 rounded-2xl p-8 flex flex-col justify-between card-perspective shadow-[0_0_50px_rgba(37,99,219,0.08)] relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-4 right-4 bg-emerald-600 text-white font-bold tracking-widest text-[9px] uppercase px-3 py-1 rounded-sm">Recommended</div>
                     <div>
-                        <div class="w-20 h-20 mx-auto mb-8 rounded-full bg-radial from-blue-300 via-blue-600 to-blue-950 shadow-[inset_-4px_-4px_12px_rgba(0,0,0,0.8),0_12px_24px_rgba(37,99,219,0.3)] animate-float flex items-center justify-center" style="animation-delay: 0.4s;">
+                        <div class="w-20 h-20 mx-auto mb-8 rounded-full bg-radial from-emerald-300 via-emerald-600 to-emerald-950 shadow-[inset_-4px_-4px_12px_rgba(0,0,0,0.8),0_12px_24px_rgba(37,99,219,0.3)] animate-float flex items-center justify-center" style="animation-delay: 0.4s;">
                             <i class="fa-solid fa-star text-white/30 text-xl"></i>
                         </div>
                         <div class="text-center">
                             <h3 class="font-display text-lg font-bold tracking-widest text-white uppercase mb-2">⭐ Standard Package</h3>
-                            <div class="text-3xl font-display font-bold text-blue-400 tracking-tight my-4">400,000 <span class="text-xs font-sans text-slate-500 font-normal">UGX</span></div>
+                            <div class="text-3xl font-display font-bold text-emerald-400 tracking-tight my-4 metallic-text">400,000 <span class="text-xs font-sans text-slate-500 font-normal">UGX</span></div>
                             <p class="text-xs text-slate-300 font-light mb-6">Designed to maximize public engagement, receive funding, and map community visibility.</p>
                         </div>
                         <hr class="border-white/5 my-6">
                         <div class="space-y-4">
                             <h4 class="text-white font-semibold text-xs uppercase tracking-wider">What's Included:</h4>
-                            <ul class="space-y-3 text-xs text-slate-300 font-light">
-                                <li class="flex items-start"><i class="fa-solid fa-check text-blue-400 mt-0.5 mr-3"></i> <span><strong>Full Operational Blueprint:</strong> Complete end-to-end operational platform profile with tailored layout nodes.</span></li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-blue-400 mt-0.5 mr-3"></i> <span><strong>Donation Pipeline Setup:</strong> Dedicated calls-to-action to process structural donation intents clearly.</span></li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-blue-400 mt-0.5 mr-3"></i> <span><strong>Google Maps System:</strong> Live map embeds confirming physical operational headquarters locations.</span></li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-blue-400 mt-0.5 mr-3"></i> <span><strong>Social Platform Syncing:</strong> Direct structural click mapping out to active external networks (Facebook, YouTube).</span></li>
+                            <ul class="space-y-3.5 text-xs text-slate-300 font-light">
+                                <li class="flex items-start"><i class="fa-solid fa-check text-emerald-400 mt-0.5 mr-3"></i> <span><strong>Full Operational Blueprint:</strong> Complete end-to-end operational platform profile with tailored layout nodes. Includes all basic plan page cores.</span></li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-emerald-400 mt-0.5 mr-3"></i> <span><strong>Trust Generation Modules:</strong> Integrated <strong>Donation Pipeline Setup</strong>, Google Maps embedding confirming physically locations, and direct social platform syncing.</span></li>
                             </ul>
                         </div>
                     </div>
-                    <a href="#contact" class="mt-8 block text-center w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-semibold text-xs uppercase tracking-widest transition shadow-lg shadow-blue-600/20">Select Standard</a>
+                    <a href="#contact" class="mt-8 block text-center w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-md font-semibold text-xs uppercase tracking-widest transition shadow-lg shadow-emerald-600/20">Deploy Standard</a>
                 </div>
 
-                <div class="bg-[#090d14] border border-white/5 rounded-2xl p-8 flex flex-col justify-between card-interaction premium-glow" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-[#090d14] border border-white/5 rounded-2xl p-8 flex flex-col justify-between card-perspective card-glow" data-aos="fade-up" data-aos-delay="300">
                     <div>
-                        <div class="w-20 h-20 mx-auto mb-8 animate-float flex items-center justify-center relative" style="animation-delay: 0.8s;">
-                            <div class="absolute inset-0 bg-yellow-500/10 rounded-full blur-xl"></div>
-                            <div class="w-16 h-12 crown-base"></div>
+                        <div class="w-20 h-20 mx-auto mb-8 rounded-full bg-radial from-yellow-100 via-yellow-500 to-yellow-950 shadow-[inset_-4px_-4px_12px_rgba(0,0,0,0.8),0_15px_30px_rgba(234,179,8,0.3)] animate-float flex items-center justify-center relative" style="animation-delay: 0.8s;">
+                            <div class="absolute inset-0 bg-yellow-500/10 rounded-full blur-xl animate-pulse"></div>
+                            <i class="fa-solid fa-crown text-white/30 text-xl relative z-10"></i>
                         </div>
                         <div class="text-center">
-                            <h3 class="font-display text-lg font-bold tracking-widest text-white uppercase mb-2">👑 Premium Package</h3>
-                            <div class="text-3xl font-display font-bold text-yellow-500 tracking-tight my-4">550,000 <span class="text-xs font-sans text-slate-500 font-normal">UGX</span></div>
+                            <h3 class="font-display text-lg font-bold tracking-widest text-white uppercase mb-2">👑 Premium NGO Architecture</h3>
+                            <div class="text-3xl font-display font-bold text-yellow-500 tracking-tight my-4 metallic-text">550,000 <span class="text-xs font-sans text-slate-500 font-normal">UGX</span></div>
                             <p class="text-xs text-slate-400 font-light mb-6">Elite tier performance for organizations demanding ultimate visibility and bespoke branding assets.</p>
                         </div>
                         <hr class="border-white/5 my-6">
                         <div class="space-y-4">
                             <h4 class="text-white font-semibold text-xs uppercase tracking-wider">What's Included:</h4>
-                            <ul class="space-y-3 text-xs text-slate-400 font-light">
-                                <li class="flex items-start"><i class="fa-solid fa-check text-yellow-500 mt-0.5 mr-3"></i> <span><strong>Bespoke UI/UX Architecture:</strong> Custom layout planning matching high-end corporate presentation styles.</span></li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-yellow-500 mt-0.5 mr-3"></i> <span><strong>Search Engine Optimization:</strong> Clean on-page keywords indexing to boost organic search rankings online.</span></li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-yellow-500 mt-0.5 mr-3"></i> <span><strong>Premium Graphic Assets:</strong> Integration of smooth modern animation blocks and floating parameters.</span></li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-yellow-500 mt-0.5 mr-3"></i> <span><strong>Priority Technical Support:</strong> Dedicated domain validation assistance and rapid ongoing response lines.</span></li>
+                            <ul class="space-y-3.5 text-xs text-slate-400 font-light">
+                                <li class="flex items-start"><i class="fa-solid fa-check text-yellow-500 mt-0.5 mr-3"></i> <span><strong>High-End UI/UX Architecture:</strong> Custom layout planning matching high-end corporate presentation styles. Extensive Search Engine Optimization (SEO) mapping.</span></li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-yellow-500 mt-0.5 mr-3"></i> <span><strong>Brand Asset Consistency:</strong> Complete consistency treatment of brand colors and asset parameters. Integration of smooth modern animation blocks. Priority domain validation support lines.</span></li>
                             </ul>
                         </div>
                     </div>
-                    <a href="#contact" class="mt-8 block text-center w-full bg-white text-slate-950 hover:bg-slate-200 py-3 rounded-md font-bold text-xs uppercase tracking-widest transition">Select Premium</a>
+                    <a href="#contact" class="mt-8 block text-center w-full bg-white text-slate-950 hover:bg-slate-200 py-3 rounded-md font-bold text-xs uppercase tracking-widest transition">Order Elite</a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-28 border-t border-white/5">
+    <section id="contact" class="py-28 border-t border-white/5 relative z-10">
         <div class="max-w-4xl mx-auto px-6">
             <div class="grid md:grid-cols-12 gap-12 items-start">
                 
                 <div class="md:col-span-5" data-aos="fade-right">
                     <span class="text-slate-600 font-bold uppercase tracking-widest text-xs block mb-2">Let's Connect</span>
-                    <h2 class="font-display text-3xl font-bold text-white tracking-tight mb-6">Start Your Project</h2>
+                    <h2 class="font-display text-3xl font-bold text-white tracking-tight mb-6">Start Your Project Brief</h2>
                     <p class="text-sm text-slate-400 leading-relaxed font-light mb-8">
                         Ready to establish a premium web workspace? Reach out directly via email or tap the fast-action WhatsApp button below.
                     </p>
@@ -331,21 +354,27 @@
                     </div>
                 </div>
 
-                <div class="md:col-span-7 bg-[#090d14] border border-white/10 rounded-xl p-8 premium-glow" data-aos="fade-left">
+                <div class="md:col-span-7 bg-[#090d14] border border-white/10 rounded-xl p-8 shadow-inner card-glow relative" data-aos="fade-left">
                     <form class="space-y-6" onsubmit="event.preventDefault();">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-[10px] uppercase tracking-wider text-slate-400 font-medium mb-2">Name</label>
-                                <input type="text" placeholder="John" class="w-full bg-[#05080d] border border-white/5 rounded-md p-3 text-xs text-white focus:outline-none focus:border-white/20 transition">
+                                <input type="text" placeholder="John" class="w-full bg-[#05080d] border border-white/5 rounded-md p-3 text-xs text-white focus:outline-none focus:border-emerald-500/20 transition">
                             </div>
                             <div>
-                                <label class="block text-[10px] uppercase tracking-wider text-slate-400 font-medium mb-2">Contact Link</label>
-                                <input type="text" placeholder="WhatsApp or Email" class="w-full bg-[#05080d] border border-white/5 rounded-md p-3 text-xs text-white focus:outline-none focus:border-white/20 transition">
+                                <label class="block text-[10px] uppercase tracking-wider text-slate-400 font-medium mb-2">Contact Method</label>
+                                <div class="grid grid-cols-12 gap-1 rounded-md border border-white/5 bg-[#05080d]">
+                                    <select class="col-span-4 bg-transparent p-3 text-[10px] uppercase tracking-wider text-slate-400 focus:outline-none border-r border-white/5">
+                                        <option selected>WhatsApp</option>
+                                        <option>Email</option>
+                                    </select>
+                                    <input type="text" placeholder="+256..." class="col-span-8 bg-transparent p-3 text-xs text-white focus:outline-none transition">
+                                </div>
                             </div>
                         </div>
                         <div>
                             <label class="block text-[10px] uppercase tracking-wider text-slate-400 font-medium mb-2">Select Package Strategy</label>
-                            <select class="w-full bg-[#05080d] border border-white/5 rounded-md p-3 text-xs text-slate-400 focus:outline-none focus:border-white/20 transition">
+                            <select class="w-full bg-[#05080d] border border-white/5 rounded-md p-3 text-xs text-slate-400 focus:outline-none focus:border-emerald-500/20 transition">
                                 <option>Basic Package Layout — 250k UGX</option>
                                 <option selected>Standard Package Layout — 400k UGX</option>
                                 <option>Premium Package Layout — 550k UGX</option>
@@ -353,7 +382,7 @@
                         </div>
                         <div>
                             <label class="block text-[10px] uppercase tracking-wider text-slate-400 font-medium mb-2">Project Scope Details</label>
-                            <textarea rows="4" placeholder="Outline specific structural requirement requests..." class="w-full bg-[#05080d] border border-white/5 rounded-md p-3 text-xs text-white focus:outline-none focus:border-white/20 transition"></textarea>
+                            <textarea rows="4" placeholder="Outline specific structural requirement requests..." class="w-full bg-[#05080d] border border-white/5 rounded-md p-3 text-xs text-white focus:outline-none focus:border-emerald-500/20 transition"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-white hover:bg-slate-200 text-slate-950 text-xs uppercase tracking-widest font-bold py-4 rounded-md transition shadow-md">
                             Submit Engineering Brief
@@ -365,7 +394,7 @@
         </div>
     </section>
 
-    <footer class="bg-[#05080d] text-slate-600 py-12 border-t border-white/5 text-center text-xs tracking-wider">
+    <footer class="bg-[#05080d] text-slate-600 py-12 border-t border-white/5 text-center text-xs tracking-wider relative z-10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p>&copy; 2026 KENTECH. Engineered premium development systems.</p>
             <div class="flex space-x-6 text-slate-500">
@@ -376,10 +405,39 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
+        // Init Scroll Animations
         AOS.init({
             once: true,
-            duration: 800
+            duration: 900,
+            offset: 150,
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)' // Custom modern easing
+        });
+
+        // Config Particle Network for Continuous Background Animation
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3, "random": true },
+                "size": { "value": 2, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#059669", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "out_mode": "bounce" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" }, /* Mouse movement responds */
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": {
+                    "grab": { "distance": 140, "line_linked": { "opacity": 0.6 } },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
         });
     </script>
 </body>
