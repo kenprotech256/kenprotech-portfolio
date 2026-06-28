@@ -3,25 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KENPRO — Digital Studio · Kampala</title>
-  <meta name="description" content="KENPRO is a digital studio in Kampala building refined, high-performance websites for businesses, real estate firms, NGOs and hotels across Uganda and Africa.">
+  <title>Work — KENPRO Digital Studio · Kampala</title>
+  <meta name="description" content="Real, live work by KENPRO: Sebei Property Partners, a real estate platform, and Mercy Children's Home, a charity site. Built in Kampala.">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="KENPRO — Digital Studio · Kampala">
-  <meta property="og:description" content="A digital studio in Kampala crafting refined, high-performance websites for ambitious brands across Uganda and Africa.">
+  <meta property="og:title" content="Work — KENPRO Digital Studio · Kampala">
+  <meta property="og:description" content="Real, live projects — Sebei Property Partners (real estate platform) and Mercy Children's Home (charity). Built in Kampala.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&h=630&fit=crop&q=80&auto=format">
-  <meta property="og:url" content="https://kenprotech.pro/">
-  <!-- Twitter -->
+  <meta property="og:url" content="https://kenprotech.pro/work.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="KENPRO — Digital Studio · Kampala">
-  <meta name="twitter:description" content="A digital studio in Kampala crafting refined, high-performance websites for ambitious brands across Uganda and Africa.">
+  <meta name="twitter:title" content="Work — KENPRO Digital Studio · Kampala">
+  <meta name="twitter:description" content="Real, live projects — Sebei Property Partners (real estate platform) and Mercy Children's Home (charity). Built in Kampala.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&h=630&fit=crop&q=80&auto=format">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .case { margin-bottom: clamp(4rem, 9vw, 8rem); }
+    .case:last-child { margin-bottom: 0; }
+    .case-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .case-top h2 { font-size: clamp(2rem, 5vw, 3.4rem); }
+    .case-index { font-family: 'Fraunces', serif; font-size: 0.95rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 0.85rem; display: block; }
+    .case-cat { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    .case-media {
+      position: relative; display: block;
+      border-radius: var(--radius-lg); overflow: hidden;
+      border: 1px solid var(--line-strong); background: var(--bg-card);
+      box-shadow: var(--shadow); aspect-ratio: 16/10; margin-bottom: 2.25rem;
+    }
+    .case-media img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 1.2s var(--ease); }
+    .case-media:hover img { transform: scale(1.03); }
+    .case-media::after { content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(11,11,13,0.5), transparent 40%); opacity:0; transition: opacity 0.6s var(--ease); }
+    .case-media:hover::after { opacity: 1; }
+    .case-visit-chip {
+      position: absolute; top: 1.1rem; right: 1.1rem; z-index: 2;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(11,11,13,0.7); backdrop-filter: blur(12px);
+      border: 1px solid var(--gold-line); border-radius: 999px;
+      padding: 0.5rem 1rem; font-size: 0.78rem; color: var(--ivory);
+      transition: background 0.4s var(--ease);
+    }
+    .case-media:hover .case-visit-chip { background: var(--gold); color: #1a1408; }
+    .case-visit-chip [data-lucide] { width: 15px; height: 15px; }
+    .case-detail { display: grid; gap: 2rem; }
+    .case-detail > p { color: var(--text); font-size: 1.05rem; max-width: 60ch; }
+    .case-facts { display: grid; gap: 1.25rem; }
+    .case-fact h4 { font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.4rem; }
+    .case-fact p { color: var(--ivory); font-size: 0.95rem; }
+    @media (min-width: 860px) {
+      .case-detail { grid-template-columns: 1.6fr 1fr; gap: 4rem; align-items: start; }
+    }
+  </style>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="grain">
@@ -46,8 +80,6 @@
       </button>
     </div>
   </nav>
-
-  <!-- mobile drawer -->
   <div class="nav-drawer" id="navDrawer">
     <div class="nav-drawer-links">
       <a href="index.html">Home <span>01</span></a>
@@ -66,184 +98,98 @@
     </div>
   </div>
 
-  <!-- ════ HERO ════ -->
-  <header class="hero">
+  <!-- ════ PAGE HEADER ════ -->
+  <header class="page-header">
     <div class="hero-glow"></div>
-    <div class="hero-glow-2"></div>
     <div class="container">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <span class="eyebrow" data-reveal>Digital Studio · Kampala</span>
-          <h1 data-reveal data-delay="80">Websites that carry the <span class="gold-italic">weight</span> of your ambition.</h1>
-          <p class="hero-sub" data-reveal data-delay="160">KENPRO is a digital studio crafting refined, high-performance websites for businesses, property firms, hotels and non-profits across Uganda and Africa.</p>
-          <div class="hero-actions" data-reveal data-delay="240">
-            <a href="work.html" class="btn btn-gold btn-lg">View the Work <i data-lucide="arrow-up-right"></i></a>
-            <a href="https://wa.me/256702381857?text=Hello%20Ken%2C%20I%27d%20like%20to%20discuss%20a%20project." class="btn btn-ghost btn-lg" target="_blank" rel="noopener">Start a Conversation</a>
-          </div>
-        </div>
-        <div class="hero-visual" data-reveal data-delay="200">
-          <div class="hero-frame" data-parallax>
-            <img src="img/sebei-screenshot.jpg" alt="Sebei Property Partners — a real estate platform built by KENPRO"
-                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80&auto=format&fit=crop'">
-            <span class="hero-chip"><span class="pulse"></span> Featured · Real Estate Platform</span>
-          </div>
-        </div>
-      </div>
+      <span class="eyebrow" data-reveal>Selected Work</span>
+      <h1 data-reveal data-delay="80">Real projects. <span class="gold-italic">Live</span> in the world.</h1>
+      <p data-reveal data-delay="160">A deliberately small portfolio — only work that's shipped, running, and serving real organisations in Uganda. Click any project to see it live.</p>
     </div>
-    <div class="hero-scroll"><span>Scroll</span><span class="line"></span></div>
   </header>
 
-  <!-- ════ MARQUEE ════ -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span class="marquee-item">Business Websites <span class="star">✦</span></span>
-      <span class="marquee-item">Real Estate Platforms <span class="star">✦</span></span>
-      <span class="marquee-item">Hospitality <span class="star">✦</span></span>
-      <span class="marquee-item">Non-Profit <span class="star">✦</span></span>
-      <span class="marquee-item">E-Commerce <span class="star">✦</span></span>
-      <span class="marquee-item">Admin Systems <span class="star">✦</span></span>
-      <span class="marquee-item">Business Websites <span class="star">✦</span></span>
-      <span class="marquee-item">Real Estate Platforms <span class="star">✦</span></span>
-      <span class="marquee-item">Hospitality <span class="star">✦</span></span>
-      <span class="marquee-item">Non-Profit <span class="star">✦</span></span>
-      <span class="marquee-item">E-Commerce <span class="star">✦</span></span>
-      <span class="marquee-item">Admin Systems <span class="star">✦</span></span>
-    </div>
-  </div>
-
-  <!-- ════ FEATURED WORK ════ -->
+  <!-- ════ CASES ════ -->
   <section class="section">
     <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">Selected Work</span>
-        <h2>Two builds, fully shipped<br>and live in the wild.</h2>
-        <p>Not concepts or mock-ups — real platforms serving real organisations in Uganda today.</p>
-      </div>
 
-      <div class="work-list">
-        <!-- Sebei -->
-        <article class="work-item" data-reveal>
-          <a class="work-media" href="https://kenpro256.github.io/sebei-property" target="_blank" rel="noopener" aria-label="Visit Sebei Property Partners">
-            <img src="img/sebei-screenshot.jpg" alt="Sebei Property Partners website"
-                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1000&q=80&auto=format&fit=crop'">
-          </a>
-          <div class="work-body">
-            <span class="work-index">01 / 02</span>
-            <span class="work-cat"><i data-lucide="building-2"></i> Real Estate Platform</span>
-            <h3>Sebei Property Partners</h3>
-            <p>A full property platform with live listings, search and filtering, per-listing WhatsApp enquiry, and a private admin panel powered by a Supabase database — so the team manages everything themselves.</p>
-            <div class="work-tags">
-              <span class="tag">Live Database</span>
-              <span class="tag">Search &amp; Filters</span>
-              <span class="tag">Admin Panel</span>
-              <span class="tag">WhatsApp Enquiry</span>
-            </div>
-            <div class="work-actions">
-              <a href="https://kenpro256.github.io/sebei-property" class="btn btn-gold" target="_blank" rel="noopener">Visit Live Site <i data-lucide="arrow-up-right"></i></a>
-              <a href="work.html" class="link-arrow">Case study <i data-lucide="arrow-right"></i></a>
-            </div>
+      <!-- Sebei -->
+      <article class="case" data-reveal>
+        <div class="case-top">
+          <div>
+            <span class="case-index">01 / 02</span>
+            <h2>Sebei Property Partners</h2>
           </div>
-        </article>
-
-        <!-- Mercy -->
-        <article class="work-item flip" data-reveal>
-          <a class="work-media" href="https://kensports.github.io/mercychildrenshome" target="_blank" rel="noopener" aria-label="Visit Mercy Children's Home">
-            <img src="img/mercy-screenshot.jpg" alt="Mercy Children's Home website"
-                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1000&q=80&auto=format&fit=crop'">
-          </a>
-          <div class="work-body">
-            <span class="work-index">02 / 02</span>
-            <span class="work-cat"><i data-lucide="heart-handshake"></i> Non-Profit</span>
-            <h3>Mercy Children's Home</h3>
-            <p>A warm, credible charity site that tells the home's story, showcases its impact through a gallery, and guides supporters toward donating and getting involved — all fast and mobile-first.</p>
-            <div class="work-tags">
-              <span class="tag">Storytelling</span>
-              <span class="tag">Donations</span>
-              <span class="tag">Gallery</span>
+          <span class="case-cat"><i data-lucide="building-2"></i> Real Estate Platform</span>
+        </div>
+        <a class="case-media" href="https://kenpro256.github.io/sebei-property" target="_blank" rel="noopener" aria-label="Visit Sebei Property Partners live site">
+          <img src="img/sebei-screenshot.jpg" alt="Sebei Property Partners — property listing platform"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80&auto=format&fit=crop'">
+          <span class="case-visit-chip">Visit Live <i data-lucide="arrow-up-right"></i></span>
+        </a>
+        <div class="case-detail">
+          <div>
+            <p>A complete property platform for a Kampala real estate firm. Buyers browse live listings, filter by type, location and price, and send a WhatsApp enquiry straight from any property. Behind it sits a Supabase database and a private admin panel, so the team adds listings, uploads photos and marks properties sold — entirely on their own, no developer required.</p>
+            <div class="work-tags" style="margin-top:1.5rem;">
+              <span class="tag">Supabase Database</span>
+              <span class="tag">Search &amp; Filters</span>
+              <span class="tag">WhatsApp Enquiry</span>
+              <span class="tag">Admin Panel · Auth + CRUD</span>
+              <span class="tag">Image Upload</span>
               <span class="tag">Mobile-First</span>
             </div>
-            <div class="work-actions">
-              <a href="https://kensports.github.io/mercychildrenshome" class="btn btn-gold" target="_blank" rel="noopener">Visit Live Site <i data-lucide="arrow-up-right"></i></a>
-              <a href="work.html" class="link-arrow">Case study <i data-lucide="arrow-right"></i></a>
+            <div class="work-actions" style="margin-top:2rem;">
+              <a href="https://kenpro256.github.io/sebei-property" class="btn btn-gold" target="_blank" rel="noopener">Visit Live Site <i data-lucide="arrow-up-right"></i></a>
             </div>
           </div>
-        </article>
-      </div>
-    </div>
-  </section>
+          <div class="case-facts">
+            <div class="case-fact"><h4>Sector</h4><p>Real Estate</p></div>
+            <div class="case-fact"><h4>Scope</h4><p>Full platform + admin</p></div>
+            <div class="case-fact"><h4>Stack</h4><p>HTML · CSS · JS · Supabase</p></div>
+            <div class="case-fact"><h4>Status</h4><p>Live &amp; in use</p></div>
+          </div>
+        </div>
+      </article>
 
-  <hr class="divider">
+      <hr class="divider" style="margin: clamp(3rem,7vw,6rem) 0;">
 
-  <!-- ════ SERVICES STRIP ════ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">What We Do</span>
-        <h2>Studio services, built<br>around your goals.</h2>
-        <p>Every engagement is bespoke — but most fall into one of these.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card" data-reveal data-delay="0">
-          <span class="service-num">01</span>
-          <div class="service-icon"><i data-lucide="globe"></i></div>
-          <h3>Business Websites</h3>
-          <p>A polished presence that earns trust before the first call.</p>
+      <!-- Mercy -->
+      <article class="case" data-reveal>
+        <div class="case-top">
+          <div>
+            <span class="case-index">02 / 02</span>
+            <h2>Mercy Children's Home</h2>
+          </div>
+          <span class="case-cat"><i data-lucide="heart-handshake"></i> Non-Profit</span>
         </div>
-        <div class="service-card" data-reveal data-delay="80">
-          <span class="service-num">02</span>
-          <div class="service-icon"><i data-lucide="building-2"></i></div>
-          <h3>Real Estate Platforms</h3>
-          <p>Live listings, search, and an admin panel you control.</p>
+        <a class="case-media" href="https://kensports.github.io/mercychildrenshome" target="_blank" rel="noopener" aria-label="Visit Mercy Children's Home live site">
+          <img src="img/mercy-screenshot.jpg" alt="Mercy Children's Home — charity website"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=80&auto=format&fit=crop'">
+          <span class="case-visit-chip">Visit Live <i data-lucide="arrow-up-right"></i></span>
+        </a>
+        <div class="case-detail">
+          <div>
+            <p>A warm, credible charity site for a Ugandan children's home. It tells the home's story, brings its work to life through a gallery, and guides supporters toward donating and getting involved — with a clean WhatsApp contact flow. Built lightweight and mobile-first, so it loads fast and shares beautifully in WhatsApp groups where most of its reach happens.</p>
+            <div class="work-tags" style="margin-top:1.5rem;">
+              <span class="tag">Storytelling</span>
+              <span class="tag">Donation Guidance</span>
+              <span class="tag">Photo Gallery</span>
+              <span class="tag">WhatsApp Contact</span>
+              <span class="tag">Social-Ready</span>
+              <span class="tag">Mobile-First</span>
+            </div>
+            <div class="work-actions" style="margin-top:2rem;">
+              <a href="https://kensports.github.io/mercychildrenshome" class="btn btn-gold" target="_blank" rel="noopener">Visit Live Site <i data-lucide="arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="case-facts">
+            <div class="case-fact"><h4>Sector</h4><p>Non-Profit · Charity</p></div>
+            <div class="case-fact"><h4>Scope</h4><p>Story + donations site</p></div>
+            <div class="case-fact"><h4>Stack</h4><p>HTML · CSS · JS</p></div>
+            <div class="case-fact"><h4>Status</h4><p>Live &amp; in use</p></div>
+          </div>
         </div>
-        <div class="service-card" data-reveal data-delay="160">
-          <span class="service-num">03</span>
-          <div class="service-icon"><i data-lucide="heart-handshake"></i></div>
-          <h3>NGO &amp; Charity Sites</h3>
-          <p>Tell your story, prove your impact, move supporters to act.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="0">
-          <span class="service-num">04</span>
-          <div class="service-icon"><i data-lucide="shopping-bag"></i></div>
-          <h3>E-Commerce</h3>
-          <p>Sell online with catalogues, carts, and mobile payments.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="80">
-          <span class="service-num">05</span>
-          <div class="service-icon"><i data-lucide="layout-dashboard"></i></div>
-          <h3>Admin Systems</h3>
-          <p>Custom platforms with real-time Supabase databases.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="160" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:linear-gradient(160deg,rgba(201,168,106,0.08),var(--bg-elev));">
-          <h3 style="margin-bottom:1rem;">Something else<br>in mind?</h3>
-          <a href="services.html" class="link-arrow">Explore all services <i data-lucide="arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
+      </article>
 
-  <!-- ════ STATS ════ -->
-  <section class="section-tight">
-    <div class="container">
-      <div class="stats" data-reveal>
-        <div class="stat"><div class="stat-num"><span data-count="100" data-suffix="%">0</span></div><div class="stat-label">Mobile-First Builds</div></div>
-        <div class="stat"><div class="stat-num"><span data-count="2">0</span></div><div class="stat-label">Platforms Live</div></div>
-        <div class="stat"><div class="stat-num"><span data-count="24" data-suffix="h">0</span></div><div class="stat-label">Typical Reply Time</div></div>
-        <div class="stat"><div class="stat-num"><span data-count="5" data-suffix="+">0</span></div><div class="stat-label">Sectors Served</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ════ QUOTE ════ -->
-  <section class="section">
-    <div class="container">
-      <div class="quote-block" data-reveal>
-        <div class="quote-mark">&ldquo;</div>
-        <blockquote>I don't build websites to look busy. I build them to <em>earn trust, move people to act,</em> and quietly do their job — long after launch.</blockquote>
-        <div class="quote-cite">
-          <span class="name">Ken</span>
-          <span class="role">Founder · KENPRO Studio</span>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -251,11 +197,11 @@
   <section class="cta-band">
     <div class="cta-glow"></div>
     <div class="cta-inner" data-reveal>
-      <span class="eyebrow center">Let's Begin</span>
-      <h2 style="margin-top:1.25rem;">Have a project worth<br>doing properly?</h2>
-      <p>Tell me about your business and what you're trying to achieve. I'll give you an honest, considered answer — no pressure.</p>
+      <span class="eyebrow center">Your Project Next</span>
+      <h2 style="margin-top:1.25rem;">Want to be the<br>next case study?</h2>
+      <p>If you'd like work like this for your business or cause, let's talk.</p>
       <div class="cta-actions">
-        <a href="https://wa.me/256702381857?text=Hello%20Ken%2C%20I%27d%20like%20to%20start%20a%20project." class="btn btn-gold btn-lg" target="_blank" rel="noopener">Chat on WhatsApp <i data-lucide="message-circle"></i></a>
+        <a href="https://wa.me/256702381857?text=Hello%20Ken%2C%20I%20saw%20your%20work%20and%20would%20like%20something%20similar." class="btn btn-gold btn-lg" target="_blank" rel="noopener">Chat on WhatsApp <i data-lucide="message-circle"></i></a>
         <a href="contact.html" class="btn btn-ghost btn-lg">Send a Brief <i data-lucide="arrow-up-right"></i></a>
       </div>
     </div>
@@ -313,7 +259,6 @@
     </div>
   </footer>
 
-  <!-- floating WhatsApp -->
   <a class="wa-float" href="https://wa.me/256702381857?text=Hello%20Ken%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
   </a>
