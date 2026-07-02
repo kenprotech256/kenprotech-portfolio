@@ -3,321 +3,285 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KENPRO — Digital Studio · Kampala</title>
-  <meta name="description" content="KENPRO is a digital studio in Kampala building refined, high-performance websites for businesses, real estate firms, NGOs and hotels across Uganda and Africa.">
-
-  <!-- Open Graph -->
+  <title>KENPRO TECH — Web Platforms Built in Uganda, Made for the World</title>
+  <meta name="description" content="KENPRO TECH designs and builds fast, beautiful websites and web platforms for businesses in Uganda and East Africa — from NGO sites to streaming platforms and 3D experiences.">
+  <meta property="og:title" content="KENPRO TECH — Digital products that punch above their weight">
+  <meta property="og:description" content="Websites and web platforms for East African brands. 12+ projects across 4 sectors. Replies in under an hour.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="KENPRO — Digital Studio · Kampala">
-  <meta property="og:description" content="A digital studio in Kampala crafting refined, high-performance websites for ambitious brands across Uganda and Africa.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&h=630&fit=crop&q=80&auto=format">
-  <meta property="og:url" content="https://kenprotech.pro/">
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="KENPRO — Digital Studio · Kampala">
-  <meta name="twitter:description" content="A digital studio in Kampala crafting refined, high-performance websites for ambitious brands across Uganda and Africa.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&h=630&fit=crop&q=80&auto=format">
-
+  <meta property="og:url" content="https://kenprotech.pro">
+  <meta name="theme-color" content="#0A0B14">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0B14'/%3E%3Cpath d='M20 14v36M20 32l16-18M22 30l18 20' stroke='%237C74FF' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
-<body class="grain">
+<body>
 
-  <!-- ════ NAV ════ -->
-  <nav class="nav" id="nav">
+  <!-- Ambient background: gradient mesh + grain -->
+  <div class="mesh" aria-hidden="true">
+    <div class="mesh-blob mesh-a"></div>
+    <div class="mesh-blob mesh-b"></div>
+    <div class="mesh-blob mesh-c"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
     <div class="nav-inner">
-      <a href="index.html" class="brand" aria-label="KENPRO home">
-        <span class="brand-mark">KENPRO<span class="dot">.</span></span>
-        <span class="brand-sub">Studio</span>
+      <a href="#top" class="brand" aria-label="KENPRO TECH — home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="currentColor" stroke-width="3" opacity=".35"/>
+          <path d="M20 14v36M20 32l16-18M22 30l18 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span>KENPRO<em>TECH</em></span>
       </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="work.html">Work</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <a href="contact.html" class="btn btn-gold nav-cta">Start a Project <i data-lucide="arrow-up-right"></i></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">Studio</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/256702381857" class="btn btn-sm btn-solid nav-cta" target="_blank" rel="noopener">Start a project</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
       </button>
     </div>
-  </nav>
-
-  <!-- mobile drawer -->
-  <div class="nav-drawer" id="navDrawer">
-    <div class="nav-drawer-links">
-      <a href="index.html">Home <span>01</span></a>
-      <a href="about.html">About <span>02</span></a>
-      <a href="services.html">Services <span>03</span></a>
-      <a href="work.html">Work <span>04</span></a>
-      <a href="contact.html">Contact <span>05</span></a>
-    </div>
-    <div class="nav-drawer-foot">
-      <a href="https://wa.me/256702381857?text=Hello%20Ken%2C%20I%27d%20like%20to%20start%20a%20project." class="btn btn-gold" target="_blank" rel="noopener">Start a Project <i data-lucide="arrow-up-right"></i></a>
-      <div class="nav-drawer-social">
-        <a class="social-btn" href="https://wa.me/256702381857" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
-        <a class="social-btn" href="https://www.instagram.com/kenprotech200" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
-        <a class="social-btn" href="https://www.facebook.com/kenprotech200" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ════ HERO ════ -->
-  <header class="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-glow-2"></div>
-    <div class="container">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <span class="eyebrow" data-reveal>Digital Studio · Kampala</span>
-          <h1 data-reveal data-delay="80">Websites that carry the <span class="gold-italic">weight</span> of your ambition.</h1>
-          <p class="hero-sub" data-reveal data-delay="160">KENPRO is a digital studio crafting refined, high-performance websites for businesses, property firms, hotels and non-profits across Uganda and Africa.</p>
-          <div class="hero-actions" data-reveal data-delay="240">
-            <a href="work.html" class="btn btn-gold btn-lg">View the Work <i data-lucide="arrow-up-right"></i></a>
-            <a href="https://wa.me/256702381857?text=Hello%20Ken%2C%20I%27d%20like%20to%20discuss%20a%20project." class="btn btn-ghost btn-lg" target="_blank" rel="noopener">Start a Conversation</a>
-          </div>
-        </div>
-        <div class="hero-visual" data-reveal data-delay="200">
-          <div class="hero-frame" data-parallax>
-            <img src="img/sebei-screenshot.jpg" alt="Sebei Property Partners — a real estate platform built by KENPRO"
-                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80&auto=format&fit=crop'">
-            <span class="hero-chip"><span class="pulse"></span> Featured · Real Estate Platform</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll"><span>Scroll</span><span class="line"></span></div>
   </header>
 
-  <!-- ════ MARQUEE ════ -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span class="marquee-item">Business Websites <span class="star">✦</span></span>
-      <span class="marquee-item">Real Estate Platforms <span class="star">✦</span></span>
-      <span class="marquee-item">Hospitality <span class="star">✦</span></span>
-      <span class="marquee-item">Non-Profit <span class="star">✦</span></span>
-      <span class="marquee-item">E-Commerce <span class="star">✦</span></span>
-      <span class="marquee-item">Admin Systems <span class="star">✦</span></span>
-      <span class="marquee-item">Business Websites <span class="star">✦</span></span>
-      <span class="marquee-item">Real Estate Platforms <span class="star">✦</span></span>
-      <span class="marquee-item">Hospitality <span class="star">✦</span></span>
-      <span class="marquee-item">Non-Profit <span class="star">✦</span></span>
-      <span class="marquee-item">E-Commerce <span class="star">✦</span></span>
-      <span class="marquee-item">Admin Systems <span class="star">✦</span></span>
-    </div>
-  </div>
+  <main id="top">
 
-  <!-- ════ FEATURED WORK ════ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">Selected Work</span>
-        <h2>Two builds, fully shipped<br>and live in the wild.</h2>
-        <p>Not concepts or mock-ups — real platforms serving real organisations in Uganda today.</p>
-      </div>
-
-      <div class="work-list">
-        <!-- Sebei -->
-        <article class="work-item" data-reveal>
-          <a class="work-media" href="https://kenpro256.github.io/sebei-property" target="_blank" rel="noopener" aria-label="Visit Sebei Property Partners">
-            <img src="img/sebei-screenshot.jpg" alt="Sebei Property Partners website"
-                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1000&q=80&auto=format&fit=crop'">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <canvas id="field" class="hero-field" aria-hidden="true"></canvas>
+      <div class="container hero-inner">
+        <p class="eyebrow reveal">Kampala, Uganda — working worldwide</p>
+        <h1 class="hero-title reveal" style="--d:.08s">
+          Web platforms that make your brand <span class="grad">impossible to ignore.</span>
+        </h1>
+        <p class="hero-sub reveal" style="--d:.16s">
+          KENPRO TECH is a one-person studio building fast, beautiful websites and web apps
+          for businesses across East Africa — charity sites, streaming platforms, real-estate
+          demos and 3D experiences that load quick and look expensive.
+        </p>
+        <div class="hero-cta reveal" style="--d:.24s">
+          <a href="#work" class="btn btn-solid">See the work</a>
+          <a href="https://wa.me/256702381857" class="btn btn-ghost" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c0 .2.1.4 0 .6l-.4.6-.4.5c-.2.1-.3.3-.1.6.1.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.2.5.1.6-.1l.8-.9c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.5.4 0 .1 0 .7-.1 1.2Z"/></svg>
+            WhatsApp me
           </a>
-          <div class="work-body">
-            <span class="work-index">01 / 02</span>
-            <span class="work-cat"><i data-lucide="building-2"></i> Real Estate Platform</span>
-            <h3>Sebei Property Partners</h3>
-            <p>A full property platform with live listings, search and filtering, per-listing WhatsApp enquiry, and a private admin panel powered by a Supabase database — so the team manages everything themselves.</p>
-            <div class="work-tags">
-              <span class="tag">Live Database</span>
-              <span class="tag">Search &amp; Filters</span>
-              <span class="tag">Admin Panel</span>
-              <span class="tag">WhatsApp Enquiry</span>
+        </div>
+        <dl class="stats reveal" style="--d:.32s">
+          <div class="stat"><dt><span class="count" data-n="12">0</span>+</dt><dd>Projects shipped</dd></div>
+          <div class="stat"><dt><span class="count" data-n="5">0</span>+</dt><dd>Platforms live</dd></div>
+          <div class="stat"><dt>&lt;1<span class="stat-unit">hr</span></dt><dd>Reply time</dd></div>
+          <div class="stat"><dt><span class="count" data-n="4">0</span></dt><dd>Sectors served</dd></div>
+        </dl>
+      </div>
+      <a class="scroll-hint" href="#work" aria-label="Scroll to work"><span></span></a>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Selected work</p>
+          <h2>Case studies, <span class="grad">not stock templates.</span></h2>
+          <p class="section-sub">Real projects — some live in production, some built as demos to prove what a sector's site should feel like.</p>
+        </div>
+
+        <div class="work-grid">
+
+          <!-- Mercy Children's Home — featured, live -->
+          <article class="card work-card work-featured reveal">
+            <a class="work-media" href="https://kensports.github.io/mercychildrenshome" target="_blank" rel="noopener" aria-label="Visit Mercy Children's Home website">
+              <img src="img/mercy-screenshot.jpg" alt="Mercy Children's Home website homepage" loading="lazy" width="1200" height="675">
+              <span class="work-live">● Live</span>
+            </a>
+            <div class="work-body">
+              <div class="work-tags"><span>Charity / NGO</span><span>Donations</span></div>
+              <h3>Mercy Children's Home</h3>
+              <p>A warm, trustworthy web presence for a children's charity — story-first layout, clear donation pathways, and a gallery that lets the work speak. Live and serving the organisation today.</p>
+              <a class="work-link" href="https://kensports.github.io/mercychildrenshome" target="_blank" rel="noopener">Visit site →</a>
             </div>
-            <div class="work-actions">
-              <a href="https://kenpro256.github.io/sebei-property" class="btn btn-gold" target="_blank" rel="noopener">Visit Live Site <i data-lucide="arrow-up-right"></i></a>
-              <a href="work.html" class="link-arrow">Case study <i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <!-- KenSports TV -->
+          <article class="card work-card reveal" style="--d:.08s">
+            <div class="work-media work-art art-sports" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18M3.5 9h17M3.5 15h17"/></svg>
             </div>
+            <div class="work-body">
+              <div class="work-tags"><span>Streaming</span><span>Sports</span></div>
+              <h3>KenSports TV</h3>
+              <p>A sports streaming platform — live match schedules, channel grid and a viewing experience designed for slow connections without feeling cheap.</p>
+            </div>
+          </article>
+
+          <!-- KenPro Movies -->
+          <article class="card work-card reveal" style="--d:.16s">
+            <div class="work-media work-art art-movies" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 5l2 4M12 5l2 4M17 5l2 4"/></svg>
+            </div>
+            <div class="work-body">
+              <div class="work-tags"><span>Streaming</span><span>Web app</span></div>
+              <h3>KenPro Movies</h3>
+              <p>A movie streaming web app with browsable catalogues, search and watch pages — built to feel like the big platforms, tuned for local bandwidth.</p>
+            </div>
+          </article>
+
+          <!-- KenPro Gaming Lounge -->
+          <article class="card work-card reveal" style="--d:.24s">
+            <div class="work-media work-art art-gaming" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9h4M8 7v4M15 8h.01M18 10h.01"/><path d="M17.3 5H6.7a4.7 4.7 0 0 0-4.6 5.4l.7 5a3 3 0 0 0 5.3 1.4L9.6 15h4.8l1.5 1.8a3 3 0 0 0 5.3-1.4l.7-5A4.7 4.7 0 0 0 17.3 5Z"/></svg>
+            </div>
+            <div class="work-body">
+              <div class="work-tags"><span>Three.js</span><span>3D web</span></div>
+              <h3>KenPro Gaming Lounge</h3>
+              <p>An interactive 3D lounge built with Three.js — real-time WebGL scenes in the browser, proving the web can do more than flat pages.</p>
+            </div>
+          </article>
+
+          <!-- Kigozi Amiss Rentals — live demo -->
+          <article class="card work-card reveal" style="--d:.32s">
+            <a class="work-media work-art art-estate" href="https://kenpro256.github.io/kigozi-demo" target="_blank" rel="noopener" aria-label="Visit Kigozi Amiss Rentals demo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg>
+              <span class="work-live">● Live demo</span>
+            </a>
+            <div class="work-body">
+              <div class="work-tags"><span>Real estate</span><span>Demo</span></div>
+              <h3>Kigozi Amiss Rentals</h3>
+              <p>A property rentals demo — listings, filters and enquiry flows showing exactly what a modern Ugandan real-estate site should be.</p>
+              <a class="work-link" href="https://kenpro256.github.io/kigozi-demo" target="_blank" rel="noopener">View demo →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT / PROCESS ============ -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <p class="eyebrow">The studio</p>
+          <h2>Small studio. <span class="grad">Serious output.</span></h2>
+          <p>KENPRO TECH is run by Kenneth Kazibwe — a developer in Kampala who treats every build like a flagship. No account managers, no hand-offs, no waiting a week for an email. You talk to the person writing the code.</p>
+          <p>Twelve-plus projects across charity, streaming, real estate and entertainment have taught the same lesson: sites win on <strong>speed, clarity and trust</strong> — so that's what gets engineered in from day one.</p>
+        </div>
+        <ol class="process reveal" style="--d:.12s">
+          <li class="card process-step">
+            <span class="step-n">01</span>
+            <h3>Listen</h3>
+            <p>A real conversation about your business, your customers and what the site must achieve — before any pixel is drawn.</p>
+          </li>
+          <li class="card process-step">
+            <span class="step-n">02</span>
+            <h3>Design</h3>
+            <p>A visual direction tailored to your brand. You approve the look before the build starts — no surprises.</p>
+          </li>
+          <li class="card process-step">
+            <span class="step-n">03</span>
+            <h3>Build</h3>
+            <p>Clean, fast code. Mobile-first, tested on real devices and real Ugandan network speeds.</p>
+          </li>
+          <li class="card process-step">
+            <span class="step-n">04</span>
+            <h3>Launch &amp; support</h3>
+            <p>Deployment, domain setup and a direct line to me after launch. Replies in under an hour.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES / PRICING ============ -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Services &amp; pricing</p>
+          <h2>Honest tiers. <span class="grad">No hidden invoices.</span></h2>
+          <p class="section-sub">Every tier includes mobile-first design, fast load times and direct WhatsApp support.</p>
+        </div>
+        <div class="price-grid">
+          <div class="card price-card reveal">
+            <h3>Basic</h3>
+            <p class="price"><span class="price-cur">UGX</span> 250K</p>
+            <p class="price-note">A sharp one-page presence</p>
+            <ul>
+              <li>Single-page website</li>
+              <li>Mobile-first responsive design</li>
+              <li>WhatsApp contact integration</li>
+              <li>1 revision round</li>
+              <li>Delivered in ~5 days</li>
+            </ul>
+            <a class="btn btn-ghost" href="https://wa.me/256702381857?text=Hi%20KENPRO%20TECH%2C%20I%27m%20interested%20in%20the%20Basic%20package." target="_blank" rel="noopener">Choose Basic</a>
           </div>
-        </article>
-
-        <!-- Mercy -->
-        <article class="work-item flip" data-reveal>
-          <a class="work-media" href="https://kensports.github.io/mercychildrenshome" target="_blank" rel="noopener" aria-label="Visit Mercy Children's Home">
-            <img src="img/mercy-screenshot.jpg" alt="Mercy Children's Home website"
-                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1000&q=80&auto=format&fit=crop'">
-          </a>
-          <div class="work-body">
-            <span class="work-index">02 / 02</span>
-            <span class="work-cat"><i data-lucide="heart-handshake"></i> Non-Profit</span>
-            <h3>Mercy Children's Home</h3>
-            <p>A warm, credible charity site that tells the home's story, showcases its impact through a gallery, and guides supporters toward donating and getting involved — all fast and mobile-first.</p>
-            <div class="work-tags">
-              <span class="tag">Storytelling</span>
-              <span class="tag">Donations</span>
-              <span class="tag">Gallery</span>
-              <span class="tag">Mobile-First</span>
-            </div>
-            <div class="work-actions">
-              <a href="https://kensports.github.io/mercychildrenshome" class="btn btn-gold" target="_blank" rel="noopener">Visit Live Site <i data-lucide="arrow-up-right"></i></a>
-              <a href="work.html" class="link-arrow">Case study <i data-lucide="arrow-right"></i></a>
-            </div>
+          <div class="card price-card price-featured reveal" style="--d:.1s">
+            <span class="price-badge">Most popular</span>
+            <h3>Standard</h3>
+            <p class="price"><span class="price-cur">UGX</span> 450K</p>
+            <p class="price-note">A full multi-page site</p>
+            <ul>
+              <li>Up to 5 pages, custom design</li>
+              <li>Photo galleries &amp; content sections</li>
+              <li>Basic SEO &amp; social previews</li>
+              <li>2 revision rounds</li>
+              <li>Delivered in ~2 weeks</li>
+            </ul>
+            <a class="btn btn-solid" href="https://wa.me/256702381857?text=Hi%20KENPRO%20TECH%2C%20I%27m%20interested%20in%20the%20Standard%20package." target="_blank" rel="noopener">Choose Standard</a>
           </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ════ SERVICES STRIP ════ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">What We Do</span>
-        <h2>Studio services, built<br>around your goals.</h2>
-        <p>Every engagement is bespoke — but most fall into one of these.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card" data-reveal data-delay="0">
-          <span class="service-num">01</span>
-          <div class="service-icon"><i data-lucide="globe"></i></div>
-          <h3>Business Websites</h3>
-          <p>A polished presence that earns trust before the first call.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="80">
-          <span class="service-num">02</span>
-          <div class="service-icon"><i data-lucide="building-2"></i></div>
-          <h3>Real Estate Platforms</h3>
-          <p>Live listings, search, and an admin panel you control.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="160">
-          <span class="service-num">03</span>
-          <div class="service-icon"><i data-lucide="heart-handshake"></i></div>
-          <h3>NGO &amp; Charity Sites</h3>
-          <p>Tell your story, prove your impact, move supporters to act.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="0">
-          <span class="service-num">04</span>
-          <div class="service-icon"><i data-lucide="shopping-bag"></i></div>
-          <h3>E-Commerce</h3>
-          <p>Sell online with catalogues, carts, and mobile payments.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="80">
-          <span class="service-num">05</span>
-          <div class="service-icon"><i data-lucide="layout-dashboard"></i></div>
-          <h3>Admin Systems</h3>
-          <p>Custom platforms with real-time Supabase databases.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="160" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:linear-gradient(160deg,rgba(124,116,255,0.08),var(--bg-elev));">
-          <h3 style="margin-bottom:1rem;">Something else<br>in mind?</h3>
-          <a href="services.html" class="link-arrow">Explore all services <i data-lucide="arrow-right"></i></a>
+          <div class="card price-card reveal" style="--d:.2s">
+            <h3>Premium</h3>
+            <p class="price"><span class="price-cur">UGX</span> 750K</p>
+            <p class="price-note">A platform, not just a site</p>
+            <ul>
+              <li>Web app / platform build</li>
+              <li>Admin panel or CMS</li>
+              <li>Database &amp; user features</li>
+              <li>Priority support after launch</li>
+              <li>Timeline scoped together</li>
+            </ul>
+            <a class="btn btn-ghost" href="https://wa.me/256702381857?text=Hi%20KENPRO%20TECH%2C%20I%27m%20interested%20in%20the%20Premium%20package." target="_blank" rel="noopener">Choose Premium</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ════ STATS ════ -->
-  <section class="section-tight">
-    <div class="container">
-      <div class="stats" data-reveal>
-        <div class="stat"><div class="stat-num"><span data-count="12" data-suffix="+">0</span></div><div class="stat-label">Projects Built</div></div>
-        <div class="stat"><div class="stat-num"><span data-count="5" data-suffix="+">0</span></div><div class="stat-label">Platforms Live</div></div>
-        <div class="stat"><div class="stat-num"><span>Under 1hr</span></div><div class="stat-label">Typical Reply Time</div></div>
-        <div class="stat"><div class="stat-num"><span data-count="4">0</span></div><div class="stat-label">Sectors Served</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ════ QUOTE ════ -->
-  <section class="section">
-    <div class="container">
-      <div class="quote-block" data-reveal>
-        <div class="quote-mark">&ldquo;</div>
-        <blockquote>I don't build websites to look busy. I build them to <em>earn trust, move people to act,</em> and quietly do their job — long after launch.</blockquote>
-        <div class="quote-cite">
-          <span class="name">Ken</span>
-          <span class="role">Founder · KENPRO Studio</span>
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="card contact-card reveal">
+          <div class="contact-copy">
+            <p class="eyebrow">Contact</p>
+            <h2>Have a project? <span class="grad">Say it once — I reply fast.</span></h2>
+            <p>WhatsApp is quickest. Message me what you need and you'll usually hear back within the hour.</p>
+            <a href="https://wa.me/256702381857" class="btn btn-solid btn-lg" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c0 .2.1.4 0 .6l-.4.6-.4.5c-.2.1-.3.3-.1.6.1.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.2.5.1.6-.1l.8-.9c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.5.4 0 .1 0 .7-.1 1.2Z"/></svg>
+              +256 702 381 857
+            </a>
+          </div>
+          <ul class="contact-links">
+            <li><a href="https://instagram.com/kenprotech200" target="_blank" rel="noopener"><span class="cl-label">Instagram</span><span class="cl-value">@kenprotech200</span></a></li>
+            <li><a href="https://facebook.com/kenprotech200" target="_blank" rel="noopener"><span class="cl-label">Facebook</span><span class="cl-value">kenprotech200</span></a></li>
+            <li><a href="mailto:kazibwekenneth57@gmail.com"><span class="cl-label">Email</span><span class="cl-value">kazibwekenneth57@gmail.com</span></a></li>
+            <li><a href="https://wa.me/256702381857" target="_blank" rel="noopener"><span class="cl-label">WhatsApp</span><span class="cl-value">+256 702 381 857</span></a></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ════ CTA ════ -->
-  <section class="cta-band">
-    <div class="cta-glow"></div>
-    <div class="cta-inner" data-reveal>
-      <span class="eyebrow center">Let's Begin</span>
-      <h2 style="margin-top:1.25rem;">Have a project worth<br>doing properly?</h2>
-      <p>Tell me about your business and what you're trying to achieve. I'll give you an honest, considered answer — no pressure.</p>
-      <div class="cta-actions">
-        <a href="https://wa.me/256702381857?text=Hello%20Ken%2C%20I%27d%20like%20to%20start%20a%20project." class="btn btn-gold btn-lg" target="_blank" rel="noopener">Chat on WhatsApp <i data-lucide="message-circle"></i></a>
-        <a href="contact.html" class="btn btn-ghost btn-lg">Send a Brief <i data-lucide="arrow-up-right"></i></a>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- ════ FOOTER ════ -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="brand">
-            <span class="brand-mark">KENPRO<span class="dot">.</span></span>
-            <span class="brand-sub">Studio</span>
-          </a>
-          <p>A digital studio in Kampala, building websites that grow ambitious brands across Africa.</p>
-          <div class="footer-socials">
-            <a class="social-btn" href="https://wa.me/256702381857" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
-            <a class="social-btn" href="https://www.instagram.com/kenprotech200" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
-            <a class="social-btn" href="https://www.facebook.com/kenprotech200" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Studio</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="services.html">Business Sites</a></li>
-            <li><a href="services.html">Real Estate</a></li>
-            <li><a href="services.html">NGO &amp; Charity</a></li>
-            <li><a href="services.html">E-Commerce</a></li>
-            <li><a href="services.html">Admin Systems</a></li>
-          </ul>
-        </div>
-        <div class="footer-col footer-contact">
-          <h4>Get in Touch</h4>
-          <ul>
-            <li><i data-lucide="message-circle"></i> <a href="https://wa.me/256702381857" target="_blank" rel="noopener">+256 702 381 857</a></li>
-            <li><i data-lucide="mail"></i> <a href="mailto:info@kenprotech.pro">info@kenprotech.pro</a></li>
-            <li><i data-lucide="map-pin"></i> Kampala, Uganda</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 KENPRO Studio. Crafted in Kampala.</span>
-        <span>Digital Studio · Kampala, Uganda</span>
-      </div>
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> KENPRO TECH · Kampala, Uganda</p>
+      <p class="footer-tag">Built by hand. No templates.</p>
     </div>
   </footer>
 
-  <!-- floating WhatsApp -->
-  <a class="wa-float" href="https://wa.me/256702381857?text=Hello%20Ken%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-  </a>
-
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
